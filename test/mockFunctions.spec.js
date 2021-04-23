@@ -1,5 +1,6 @@
 const mockFunctions = require('../src/mockFunctions');
 
+jest.mock('../src/mockFunctions');
 /*
 Criamos uma série de funções com eficiência duvidosa.
 Elas estão no arquivo 'src/mockFunctions.js'.
@@ -15,7 +16,42 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe('verifica as funções e os mocks', () => {
-  // Crie suas mock functions aqui
+  beforeEach(() => {
+    mockFunctions.add.mockImplementation((a, b) => a + b);
+  });
+  beforeEach(() => {
+    mockFunctions.subtract.mockImplementation((a, b) => a - b);
+  });
+  beforeEach(() => {
+    mockFunctions.multiply.mockImplementation((a, b) => a * b);
+  });
+  beforeEach(() => {
+    mockFunctions.divide.mockImplementation((a, b) => a / b);
+  });
+  beforeEach(() => {
+    // Pesquisei no google como calcular potência
+    mockFunctions.power.mockImplementation((a, b) => {
+      if (a === 0 || b === 0) {
+        return 1;
+      }
+      let pow = a;
+      for (let i = 1; i < b; i += 1) {
+        pow = mockFunctions.multiply(pow, a);
+      }
+      return pow;
+    });
+  });
+
+  beforeEach(() => {
+    // resolvi pesquisando este problema no stackoverflow
+    mockFunctions.factorial.mockImplementation((a) => {
+      let fact = a;
+      for (let i = 1; i < a; i += 1) {
+        fact *= i;
+      }
+      return fact;
+    });
+  });
 
   test('testa função add', () => {
     expect(mockFunctions.add(1, 2)).toEqual(3);
