@@ -6,16 +6,13 @@ devido a ameaça de criaturas temíveis, o grupo não chegará inteiro ao fim.
 Após cada aventura um de nossos aventureiros cairá.
 Cada um dos testes abaixo verifica a quantidade de aventureiros após cada iteração.
 Sua missão aqui é:
-
   - Use a função randomAttack do objeto adventure
   que remove um dos aventureiros toda vez que é chamada,
   ela deve funcionar entre cada teste.
   Opcional:
   - Para ficar mais visível, imprima na tela após cada teste o grupo de aventureiros restante.
   - No fim dos testes, imprima uma mensagem com o nome do aventureiro que sobreviveu.
-
 PS: Os codinomes dos aventureiros são reais! Tentem descobrir quem é quem!
-
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
@@ -39,6 +36,9 @@ describe('quem sobreviveu?', () => {
   });
 });
 
+//Source:https://stackoverflow.com/questions/57497799/what-is-the-purpose-of-beforeeach-global-in-jest/57502967, BeforeEach
+
+//Source:https://jestjs.io/pt-BR/docs/cli Verbose,WatchAll
 //Source:https://stackoverflow.com/questions/57497799/what-is-the-purpose-of-beforeeach-global-in-jest/57502967, BeforeEach
 
 //Source:https://jestjs.io/pt-BR/docs/cli Verbose,WatchAll

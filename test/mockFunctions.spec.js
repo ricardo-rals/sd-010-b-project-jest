@@ -7,10 +7,8 @@ Crie mock functions para cada uma das operações de modo que os cálculos sejam
 não como estão sendo feitos no arquivo original.
 A idéia é que os novos testes sobrescrevam os testes
 importados apenas na suite de testes abaixo.
-
 Importante! A correção de código via mock functions não é uma aplicação usual.
 O foco aqui é a utilização de mock functions.
-
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
@@ -28,7 +26,7 @@ describe('verifica as funções e os mocks', () => {
     }
     return acumulador;
   });
-  //Source:https://www.youtube.com/watch?v=iN86lpkRcDk Mocking functions
+  
 
   test('testa função add', () => {
     expect(mockFunctions.add(1, 2)).toEqual(3);
