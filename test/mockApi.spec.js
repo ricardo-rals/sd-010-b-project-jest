@@ -21,9 +21,8 @@ Dica: Utilizem os métodos jest.fn() ou jest.spyOn().
 
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
-
+jest.mock('../src/mockApi');
 describe('verifica o usuário', () => {
-  // Crie sua mock da função fetchURL() aqui
 
   test('verifica se o usuário é o tunico', async () => (
     api.fetchURL().then((user) => {
