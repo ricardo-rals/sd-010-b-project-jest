@@ -12,17 +12,12 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'oi
 
 describe('o retorno do telefonema', () => {
   test('atende', async () => {
-    expect.assertions(1);
-    const pickedUp = await answerPhone();
+    const pickedUp = await answerPhone(true);
 
-    expect(pickedUp).toBe('Oi!');
+    expect(pickedUp).toEqual('Oi!');
   });
   test('ocupado', async () => {
-    expect.assertions(1);
-    try {
-      await answerPhone();
-    } catch (error) {
-      expect(error).toBe('Infelizmente não podemos atender...');
-    }
+    const busy = answerPhone(false);
+    expect(busy).rejects.toEqual(new Error('Infelizmente não podemos atender...'));
   });
 });
