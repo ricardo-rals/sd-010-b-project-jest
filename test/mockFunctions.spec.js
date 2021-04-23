@@ -16,6 +16,18 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 
 describe('verifica as funções e os mocks', () => {
   // Crie suas mock functions aqui
+  mockFunctions.add = jest.fn((num1, num2) => num1 + num2);
+  mockFunctions.subtract = jest.fn((num1, num2) => num1 - num2);
+  mockFunctions.multiply = jest.fn((num1, num2) => num1 * num2);
+  mockFunctions.divide = jest.fn((num1, num2) => num1 / num2);
+  mockFunctions.power = jest.fn((num1, num2) => num1 ** num2);
+  // Busquei a implementação da operação fatorial neste link: https://www.w3resource.com/javascript-exercises/javascript-recursion-function-exercise-1.php
+  mockFunctions.factorial = jest.fn((number) => {
+    if (number === 0) {
+      return 1;
+    }
+    return number * mockFunctions.factorial(number - 1);
+  });
 
   test('testa função add', () => {
     expect(mockFunctions.add(1, 2)).toEqual(3);
