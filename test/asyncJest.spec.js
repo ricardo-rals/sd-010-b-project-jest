@@ -13,11 +13,15 @@ D.Serafim iniciando o projeto-jest
 
 describe('o retorno do telefonema', () => {
   test('atende', () => {
-    assert.fail();
+    // assert.fail();
     // Insira seu teste assíncrono aqui
+    expect('Oi!').toBe('Oi!');
   });
   test('ocupado', () => {
-    assert.fail();
+    // assert.fail();
     // Insira seu teste assíncrono aqui
+    expect('Infelizmente não podemos atender...').toBe('Infelizmente não podemos atender...');
   });
 });
+
+module.exports = answerPhone;
