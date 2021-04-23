@@ -21,41 +21,31 @@ Dica: Utilizem os métodos jest.fn() ou jest.spyOn().
 
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
-// const obj = {
-//   gender: 'male',
-//   name: { title: 'Ms', first: 'Antônio', last: 'Britto' },
-//   location: {
-//     street: { number: 1299, name: 'Rochestown Road' },
-//     city: 'Birr',
-//     state: 'Wicklow',
-//     country: 'Brazil',
-//     postcode: 16223,
-//     coordinates: { latitude: '26.2451', longitude: '45.2995' },
-//     timezone: {
-//       offset: '+5:30',
-//       description: 'Bombay, Calcutta, Madras, New Delhi'
-//     },
-//   },
-//   email: 'tunico@bol.com.br',
-//   login: {
-//     uuid: '45db2b1f-1c9a-4a80-9572-e46614f86c30',
-//     username: 'tunicao123',
-//     password: '1234567890',
-//     salt: 'XKOOGc2x'
-//   },
-// }
 
 describe('verifica o usuário', () => {
   // Crie sua mock da função fetchURL() aqui
-  api.fetchURL = jest.fn().mockImplementation({
-    // new Promise((resolve, reject) => {
-    // setTimeout(() => {
-    //   if (resolve) {
-    //     return resolve(obj);
-    //   }
-    //   return reject('Não foi encontrado');
-    // }, 3000);
-    // })
+  api.fetchURL = jest.fn().mockResolvedValue({
+    gender: 'male',
+    name: { title: 'Ms', first: 'Antônio', last: 'Britto' },
+    location: {
+      street: { number: 1299, name: 'Rochestown Road' },
+      city: 'Birr',
+      state: 'Wicklow',
+      country: 'Brazil',
+      postcode: 16223,
+      coordinates: { latitude: '26.2451', longitude: '45.2995' },
+      timezone: {
+        offset: '+5:30',
+        description: 'Bombay, Calcutta, Madras, New Delhi',
+      },
+    },
+    email: 'tunico@bol.com.br',
+    login: {
+      uuid: '45db2b1f-1c9a-4a80-9572-e46614f86c30',
+      username: 'tunicao123',
+      password: '1234567890',
+      salt: 'XKOOGc2x',
+    },
   });
   test('verifica se o usuário é o tunico', async () => (
     api.fetchURL().then((user) => {
