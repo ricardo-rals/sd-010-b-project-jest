@@ -46,7 +46,9 @@ describe('verifica as funções e os mocks', () => {
     expect(mockFunctions.multiply(-12, -7)).toEqual(84);
     expect(mockFunctions.multiply(19, 23)).toEqual(437);
   });
-  /* test('testa função divide', () => {
+  test('testa função divide', () => {
+    mockFunctions.divide.mockImplementation((a, b) => a / b);
+
     expect(mockFunctions.divide(169, 13)).toEqual(13);
     expect(mockFunctions.divide(-1900, 5)).toEqual(-380);
     expect(mockFunctions.divide(42, 7)).toEqual(6);
@@ -54,13 +56,22 @@ describe('verifica as funções e os mocks', () => {
     expect(mockFunctions.divide(1331, 11)).toEqual(121);
   });
   test('testa função power', () => {
+    // mockFunctions.multiply.mockReturnValue(pow * a);
+    mockFunctions.power.mockImplementation((a, b) => {
+      let pow = 1;
+      for (let i = 0; i < b; i += 1) {
+        pow = mockFunctions.multiply(pow, a);
+      }
+      return pow;
+    });
+
     expect(mockFunctions.power(10, 2)).toEqual(100);
     expect(mockFunctions.power(2, 10)).toEqual(1024);
     expect(mockFunctions.power(5, 5)).toEqual(3125);
     expect(mockFunctions.power(1, 10)).toEqual(1);
     expect(mockFunctions.power(0, 0)).toEqual(1);
   });
-  test('testa função factorial', () => {
+  /* test('testa função factorial', () => {
     expect(mockFunctions.factorial(5)).toEqual(120);
     expect(mockFunctions.factorial(10)).toEqual(3628800);
     expect(mockFunctions.factorial(3)).toEqual(6);
