@@ -16,7 +16,7 @@ describe('o retorno do telefonema', () => {
     const answer = await answerPhone('oi');
     expect(answer).toBe('Oi!');
   });
-  test('ocupado', async () => {
+  test('ocupado', () => {
     expect.assertions(1);
     answerPhone().catch((error) =>
       expect(error).toEqual('Infelizmente não podemos atender...'));
