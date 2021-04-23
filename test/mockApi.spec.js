@@ -24,15 +24,15 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 
 describe('verifica o usuário', () => {
   const mockApi = {
-    gender: "male",
-    name: { first: "Antônio", last:"Britto" },
-    email:"tunico@bol.com.br",
+    gender: 'male',
+    name: { first: 'Antônio', last:'Britto' },
+    email:'tunico@bol.com.br',
     location: {
-      country:"Brazil",
+      country:'Brazil',
     },
     login: {
-      username: "tunicao123",
-      password: "1234567890",
+      username: 'tunicao123',
+      password: '1234567890',
     },
   };
   api.fetchURL = jest.fn().mockResolvedValue(mockApi);
