@@ -11,13 +11,19 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe('o retorno do telefonema', () => {
-  test('atende', () => {
-    assert.fail();
-    // Insira seu teste assíncrono aqui aqui eu começo meu teste
-    // npm test nome-arquivo.test
-  });
-  test('ocupado', () => {
-    assert.fail();
+  test('atende', (done) => {
     // Insira seu teste assíncrono aqui
+    // npm test nome-arquivo.test
+    const reso =  answerPhone()
+    expect(reso).toBe('Oi!');
+    done();
+
+  });
+  test('ocupado', (done) => {
+    // Insira seu teste assíncrono aqui
+    // npm run lint
+    const rej =  answerPhone()
+    expect(rej).toBe('Infelizmente não podemos atender...');
+    done();
   });
 });
