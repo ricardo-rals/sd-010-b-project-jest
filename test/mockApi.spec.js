@@ -23,9 +23,7 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe('verifica o usuário', () => {
-  api.fetchURL = jest
-    .fn()
-    .mockResolvedValue({
+  api.fetchURL = jest.fn().mockResolvedValue({
       gender: 'male',
       name: { first: 'Antônio', last: 'Britto' },
       location: {
