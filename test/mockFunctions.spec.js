@@ -79,3 +79,4 @@ describe('verifica as funções e os mocks', () => {
 
 // Agradecimentos > https://www.educative.io/edpresso/how-to-find-the-factorial-of-a-number-in-javascript
 // Gabriel Essesio Turma 10 - Tribo B
+// Denis Turma 10 - Tribo B
