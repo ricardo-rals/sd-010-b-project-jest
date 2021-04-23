@@ -9,7 +9,6 @@ a função recebe como parâmetro true e false, respectivamente.
 
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
-console.log('hello world!')
 
 describe('o retorno do telefonema', () => {
   test('atende', () => {
@@ -29,3 +28,4 @@ describe('o retorno do telefonema', () => {
 // Com a ajuda dos colegas Gabriel , Alessandra e outros, discutimos a respeito do return,
 // Na segunda operação de Error, usando o Try Catch, onde ele não necessita de um return,
 // Ja que ele ja funciona Assincronamente.
+
