@@ -24,7 +24,7 @@ describe('verifica as funções e os mocks', () => {
   function factorial(number) {
     return number > 1 ? number * factorial(number - 1) : 1;
   }
-  mockFunctions.factorial = jest.fn().mockImplementation((a) => factorial(a));
+  mockFunctions.factorial = jest.fn().mockImplementation(factorial);
 
   test('testa função add', () => {
     expect(mockFunctions.add(1, 2)).toEqual(3);
