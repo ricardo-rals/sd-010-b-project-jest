@@ -16,7 +16,6 @@ describe('o retorno do telefonema', () => {
   });
   test('ocupado', async () => {
     await expect(answerPhone(false)).rejects.toThrow('Infelizmente não podemos atender...');
-
   });
 });
 // Referência => https://jestjs.io/pt-BR/docs/asynchronous
