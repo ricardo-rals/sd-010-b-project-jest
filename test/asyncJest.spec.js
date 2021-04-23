@@ -18,6 +18,6 @@ describe('o retorno do telefonema', () => {
     expect.assertions(1);
     return answerPhone().catch((error) =>
       expect(error.message).toStrictEqual('Infelizmente não podemos atender...'));
-    // teste de erro feito com ajuda Arlen Freitas
+    // teste de erro feito com ajuda Arlen Freitas :)
   });
 });

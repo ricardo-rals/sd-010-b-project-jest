@@ -25,3 +25,8 @@ const randomAttack = () => {
 };
 
 module.exports = { specialists, randomAttack };
+
+//Source:https://stackoverflow.com/questions/57497799/what-is-the-purpose-of-beforeeach-global-in-jest/57502967, BeforeEach
+//Source:https://jestjs.io/pt-BR/docs/cli Verbose,WatchAll
+//Source:https://stackoverflow.com/questions/57497799/what-is-the-purpose-of-beforeeach-global-in-jest/57502967, BeforeEach
+//Source:https://jestjs.io/pt-BR/docs/cli Verbose,WatchAll
