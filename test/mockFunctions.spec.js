@@ -59,9 +59,9 @@ describe('verifica as funções e os mocks', () => {
   });
   test('testa função factorial', () => {
     mockFunctions.factorial = jest.fn().mockImplementation((a) => {
-      let fatorial = a;
+      const fatorial = a;
       let resultado = fatorial;
-      for (let i = 1; i < fatorial; i++) {
+      for (let i = 1; i < fatorial; i += 1) {
         resultado *= i;
       }
       return resultado;

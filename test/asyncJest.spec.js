@@ -1,4 +1,4 @@
-const assert = require('assert');
+// const assert = require('assert');
 const answerPhone = require('../src/asyncJest');
 /*
 A função answerPhone recebe um parâmetro boleano.
@@ -20,3 +20,6 @@ describe('o retorno do telefonema', async () => {
     return expect(answerPhone(false)).rejects.toThrow('Infelizmente não podemos atender...');
   });
 });
+
+// referencia https://dev.to/dotmendes/testando-lancamento-de-excecoes-com-jest-4p8c
+// Todo o projeto foi feito em parceria com Wellington Passo
