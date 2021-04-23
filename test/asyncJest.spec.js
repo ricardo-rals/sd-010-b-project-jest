@@ -10,17 +10,14 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 
 describe('o retorno do telefonema', () => {
   test('atende', async () => {
-    // assert.fail();
-    // Insira seu teste assíncrono aqui
     expect.assertions(1);
-    await expect(answerPhone(true)).resolves.toEqual('Oi!');
+    const answer = await answerPhone('oi');
+    expect(answer).toBe('Oi!');
   });
   test('ocupado', () => {
-    // assert.fail();
-    // Insira seu teste assíncrono aqui
     expect.assertions(1);
-    answerPhone().catch((error) => {
-      expect(error.message).toEqual('Infelizmente não podemos atender...');
-    });
+    return answerPhone().catch((error) =>
+      expect(error.message).toStrictEqual('Infelizmente não podemos atender...'));
+    // teste de erro feito com ajuda Arlen Freitas
   });
 });
