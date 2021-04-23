@@ -12,12 +12,10 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 describe('o retorno do telefonema', () => {
   test('atende', async () => {
     // Insira seu teste assíncrono aqui
-    const chamada = await answerPhone('atende');
-    expect(chamada).toBe('Oi!');
+    await expect(answerPhone('atende')).resolves.toBe('Oi!');
   });
   test('ocupado', async () => {
     // Insira seu teste assíncrono aqui
-    const chamada = answerPhone();
-    await expect(chamada).rejects.toEqual(Error('Infelizmente não podemos atender...'));
+    await expect(answerPhone()).rejects.toEqual(Error('Infelizmente não podemos atender...'));
   });
 });
