@@ -12,14 +12,10 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 // init
 describe('o retorno do telefonema', () => {
   test('atende', async () => {
-    // assert.fail();
-    // Insira seu teste assíncrono aqui
-    await expect(answerPhone(true)).resolves.toEqual('Oi!');
+    await expect(answerPhone(true)).resolves.toStrictEqual('Oi!');
   });
   test('ocupado', async () => {
-    // assert.fail();
-    // Insira seu teste assíncrono aqui
     await expect(answerPhone(false)).rejects
-      .toEqual(new Error('Infelizmente não podemos atender...'));
+      .toStrictEqual(new Error('Infelizmente não podemos atender...'));
   });
 });
