@@ -12,12 +12,18 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 
 describe('o retorno do telefonema', () => {
   test('atende', () => {
-    console.log(answerPhone());
-    // expect(answerPhone).toBe('Oi');
+    const answer = (data) => {
+      expect(data).toEqual('Oi!');
+    };
+    expect.assertions(1);
+    return answerPhone(true).then(answer);
     // Insira seu teste assíncrono aqui
   });
   test('ocupado', () => {
-    // expect(answerPhone).toBe(''Infelizmente não podemos atender...'');
+    const answer = (data) => {
+      expect(data).toEqual(Error('Infelizmente não podemos atender...'));
+    };
+    return answerPhone(false).catch(answer);
     // Insira seu teste assíncrono aqui
   });
 });
