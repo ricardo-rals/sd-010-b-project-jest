@@ -61,13 +61,11 @@ const requestReturn = {
 };
 
 describe('verifica o usuário', () => {
-  let mockFecthURL = jest
-    .spyOn(api, 'fetchURL');
+  const mockFecthURL = jest
+    .spyOn(api, 'fetchURL')
+    .mockResolvedValue(requestReturn);
 
   test('verifica se o usuário é o tunico', async () => {
-    mockFecthURL = jest.fn()
-      .mockResolvedValue(requestReturn);
-
     mockFecthURL().then((user) => {
       expect(user.gender).toEqual('male');
       expect(user.name.first).toEqual('Antônio');
