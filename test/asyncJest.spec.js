@@ -17,11 +17,12 @@ describe('o retorno do telefonema', () => {
     expect.assertions(1);
     await expect(answerPhone(true)).resolves.toEqual('Oi!');
   });
-  test('ocupado', async () => {
+  test('ocupado', () => {
     // assert.fail();
     // Insira seu teste assíncrono aqui
     expect.assertions(1);
-    const error = new Error('Infelizmente não podemos atender...');
-    await expect(answerPhone(false)).rejects.toEqual(error);
+    answerPhone().catch((error) => {
+      expect(error).toEqual('Infelizmente não podemos atender...');
+    });
   });
 });
