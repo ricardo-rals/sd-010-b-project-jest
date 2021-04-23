@@ -11,12 +11,17 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe('o retorno do telefonema', () => {
-  test('atende', () => {
-    assert.fail();
+  test('atende', async () => {
+    // assert.fail();
     // Insira seu teste assíncrono aqui
+    //** Source https://jestjs.io/pt-BR/docs/expect#resolves */
+    expect.assertions(1);
+    await expect(answerPhone(true)).resolves.toEqual('Oi!')
   });
   test('ocupado', () => {
-    assert.fail();
+    // assert.fail();
     // Insira seu teste assíncrono aqui
+    expect.assertions(1);
+    await expect(answerPhone(false)).rejects.toThrow('Infelizmente não podemos atender...')
   });
 });
