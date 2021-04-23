@@ -14,14 +14,14 @@ describe('o retorno do telefonema', () => {
   test('atende', async () => {
     // assert.fail();
     // Insira seu teste assíncrono aqui
-    //** Source https://jestjs.io/pt-BR/docs/expect#resolves */
+    //* Source https://jestjs.io/pt-BR/docs/expect#resolves */
     expect.assertions(1);
-    await expect(answerPhone(true)).resolves.toEqual('Oi!')
+    await expect(answerPhone(true)).resolves.toEqual('Oi!');
   });
   test('ocupado', async () => {
     // assert.fail();
     // Insira seu teste assíncrono aqui
     expect.assertions(1);
-    await expect(answerPhone(false)).rejects.toThrow('Infelizmente não podemos atender...')
+    await expect(answerPhone(false)).rejects.toThrow('Infelizmente não podemos atender...');
   });
 });
