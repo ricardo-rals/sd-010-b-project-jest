@@ -23,7 +23,43 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe('verifica o usuário', () => {
-  // Crie sua mock da função fetchURL() aqui
+  const userTunico = {
+    gender: 'male',
+    name: {
+      title: 'Mrs',
+      first: 'Antônio',
+      last: 'Britto',
+    },
+    location: {
+      street: {
+        number: 8682,
+        name: 'Mevlana Cd',
+      },
+      city: 'Campo Grande',
+      state: 'Mato Grosso DO SUL',
+      country: 'Brazil',
+      postcode: 71449,
+      coordinates: {
+        latitude: '71.9287',
+        longitude: '6.9729'
+      },
+      timezone: {
+        offset: '-3:30',
+        description: 'Newfoundland'
+      },
+    },
+    email: 'tunico@bol.com.br',
+    login: {
+      uuid: 'e764de54-aae2-4e67-97cc-dfb4590c57e4',
+      username: 'tunicao123',
+      password: '1234567890',
+      salt: 'Q5i4zEKE',
+      md5: 'f8bdc65ff74f3b919782a7c99108506d',
+      sha1: '565e75330fc41126c6f84bb76fa94f9249bfde24',
+      sha256: '58cd3cc09c8dd1d82e8bea95780253ce6ce8037a255403a0b1d932d5978c1640'
+    },
+  };
+  api.fetchURL = jest.fn(api.fetchURL).mockResolvedValue(userTunico);
 
   test('verifica se o usuário é o tunico', async () => (
     api.fetchURL().then((user) => {
