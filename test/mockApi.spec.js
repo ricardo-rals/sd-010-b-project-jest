@@ -23,8 +23,7 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe('verifica o usuário', () => {
-  api.fetchURL = jest.fn()
-  .mockResolvedValue(() => ({
+  const tunico = {
     gender: 'male',
     name: {
       first: 'Antônio',
@@ -37,11 +36,11 @@ describe('verifica o usuário', () => {
     login: {
       username: 'tunicao123',
       password: '1234567890',
-    }
-  }))
+    },
+  };
+  api.fetchURL = jest.fn().mockResolvedValue(tunico);
 
-
-  test('verifica se o usuário é o tunico', async () => (
+  test('verifica se o usuário é o tunico', async () =>
     api.fetchURL().then((user) => {
       expect(user.gender).toEqual('male');
       expect(user.name.first).toEqual('Antônio');
@@ -50,6 +49,5 @@ describe('verifica o usuário', () => {
       expect(user.email).toEqual('tunico@bol.com.br');
       expect(user.login.username).toEqual('tunicao123');
       expect(user.login.password).toEqual('1234567890');
-    })
-  ));
+    }));
 });
