@@ -22,12 +22,15 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 describe('quem sobreviveu?', () => {
   // Adicione seu código aqui
 
+  // atacando antes de cada teste
   beforeEach(() => adventure.randomAttack());
 
+  // sobreviventes após cada ataque
   afterEach(() => {
     adventure.specialists.forEach((specialist) => console.log(`${specialist.nome} ainda vive...`));
   });
 
+  // ultimo aventureiro
   afterAll(() => {
     adventure.specialists.forEach((specialist) =>
       console.log(`O aventureiro ${specialist.nome} foi o único sobrevivente...`));

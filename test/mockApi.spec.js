@@ -22,10 +22,13 @@ Dica: Utilizem os métodos jest.fn() ou jest.spyOn().
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
+// criando o ambiente simulado para as funções do arquivo
 jest.mock('../src/mockApi');
 
 describe('verifica o usuário', () => {
   // Crie sua mock da função fetchURL() aqui
+
+  // definindo os valores iguais aos testes
   const apiValues = {
     gender: 'male',
     name: {
