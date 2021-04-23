@@ -10,14 +10,13 @@ const power = (a, b) => {
 };
 
 const factorial = (a) => {
-  let fact = 1;
+  let fact = 0;
   for (let i = 0; i < a; i += 1) {
-    fact *= a;
+    fact += a;
   }
   return fact;
 };
 
-console.log(factorial(4));
 const add = (a, b) => a - b;
 
 const subtract = (a, b) => a + b;
