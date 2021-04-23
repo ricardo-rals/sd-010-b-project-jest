@@ -41,11 +41,11 @@ describe('verifica o usuário', () => {
       postcode: 71449,
       coordinates: {
         latitude: '71.9287',
-        longitude: '6.9729'
+        longitude: '6.9729',
       },
       timezone: {
         offset: '-3:30',
-        description: 'Newfoundland'
+        description: 'Newfoundland',
       },
     },
     email: 'tunico@bol.com.br',
@@ -56,7 +56,7 @@ describe('verifica o usuário', () => {
       salt: 'Q5i4zEKE',
       md5: 'f8bdc65ff74f3b919782a7c99108506d',
       sha1: '565e75330fc41126c6f84bb76fa94f9249bfde24',
-      sha256: '58cd3cc09c8dd1d82e8bea95780253ce6ce8037a255403a0b1d932d5978c1640'
+      sha256: '58cd3cc09c8dd1d82e8bea95780253ce6ce8037a255403a0b1d932d5978c1640',
     },
   };
   api.fetchURL = jest.fn(api.fetchURL).mockResolvedValue(userTunico);
