@@ -1,5 +1,5 @@
-const assert = require('assert');
-const { hasUncaughtExceptionCaptureCallback } = require('process');
+// const assert = require('assert');
+// const { hasUncaughtExceptionCaptureCallback } = require('process');
 const answerPhone = require('../src/asyncJest');
 /*
 A função answerPhone recebe um parâmetro boleano.
@@ -16,11 +16,13 @@ describe('o retorno do telefonema', () => {
     // assert.fail();
     expect.assertions(1);
     return answerPhone(true).then((answer) => {
-      expect(answer).toEqual('Oi!')}); 
+      expect(answer).toEqual('Oi!');
+    }); 
   });
   test('ocupado', () => {    expect.assertions(1);
     return answerPhone(false).catch((answer) => {
-      expect(answer.message).toEqual('Infelizmente não podemos atender...')}); 
+      expect(answer.message).toEqual('Infelizmente não podemos atender...');
+    }); 
       // tive que olhar varios repositorios para resolver. encontrei este .message no da [Mariana Mohr]
     // assert.fail();
   });
