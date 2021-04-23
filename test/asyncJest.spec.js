@@ -1,4 +1,3 @@
-const assert = require('assert');
 const answerPhone = require('../src/asyncJest');
 /*
 A função answerPhone recebe um parâmetro boleano.
@@ -14,7 +13,7 @@ describe('o retorno do telefonema', () => {
     await expect(expect1).toBe('Oi!');
     return expect1;
   });
-  //Referência: https://stackoverflow.com/questions/47144187/can-you-write-async-tests-that-expect-tothrow
+  // Referência: https://stackoverflow.com/questions/47144187/can-you-write-async-tests-that-expect-tothrow
   test('should test async errors', async () => {
     await expect(answerPhone(false)).rejects.toThrow('Infelizmente não podemos atender...');
   });
