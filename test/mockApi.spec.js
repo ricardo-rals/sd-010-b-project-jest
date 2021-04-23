@@ -23,7 +23,7 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe('verifica o usuário', () => {
-  // Crie sua mock da função fetchURL() aqui
+  // pega a api e faço um mock retornando o valor da promise com o mockResolvedValue
   api.fetchURL = jest.fn().mockResolvedValue({ // mock do retorno da função, não implemento apenas falo que o retorno sera esse (Murilo Wolf)
     gender: 'male',
     name: { first: 'Antônio', last: 'Britto' },
