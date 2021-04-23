@@ -92,5 +92,6 @@ describe('verifica as funções e os mocks', () => {
     expect(mockFunctions.factorial(3)).toEqual(6);
     expect(mockFunctions.factorial(8)).toEqual(40320);
     expect(mockFunctions.factorial(2)).toEqual(2);
+    expect(factorial).toHaveBeenCalledTimes(5);
   });
 });
