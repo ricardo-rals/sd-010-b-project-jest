@@ -42,6 +42,7 @@ describe('verifica o usuário', () => {
     },
   };
 
+  // utilizando os valores nos testes
   api.fetchURL = jest.fn().mockResolvedValue(apiValues);
 
   test('verifica se o usuário é o tunico', async () => (
