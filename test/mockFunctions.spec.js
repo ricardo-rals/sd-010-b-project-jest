@@ -28,7 +28,7 @@ describe('verifica as funções e os mocks', () => {
     }
     return acumulador;
   });
-  
+  //Source:https://www.youtube.com/watch?v=iN86lpkRcDk Mocking functions
 
   test('testa função add', () => {
     expect(mockFunctions.add(1, 2)).toEqual(3);

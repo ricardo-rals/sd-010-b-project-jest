@@ -20,7 +20,7 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe('quem sobreviveu?', () => {
-  // Adicione seu código aqui
+  beforeEach( () => adventure.randomAttack() );
 
   test('depois da primeira aventura', () => {
     expect(adventure.specialists.length).toBe(5);
@@ -38,3 +38,10 @@ describe('quem sobreviveu?', () => {
     expect(adventure.specialists.length).toBe(1);
   });
 });
+
+//Source:https://stackoverflow.com/questions/57497799/what-is-the-purpose-of-beforeeach-global-in-jest/57502967, BeforeEach
+
+//Source:https://jestjs.io/pt-BR/docs/cli Verbose,WatchAll
+
+
+
