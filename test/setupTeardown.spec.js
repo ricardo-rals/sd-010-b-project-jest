@@ -24,6 +24,11 @@ describe('quem sobreviveu?', () => {
   beforeEach(() => {
     adventure.randomAttack();
   });
+  // Tive ajuda do Renan Braga, João Herculano, Lotar Lucas e Rafael Mathias
+  afterEach(() =>{
+    const [{ nome }] = adventure.specialists;
+    console.log(`Sobrevivente: ${[nome]}`);
+  });
   test('depois da primeira aventura', () => {
     expect(adventure.specialists.length).toBe(5);
   });
