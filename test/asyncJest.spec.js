@@ -13,16 +13,15 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 describe('o retorno do telefonema', () => {
   test('atende', (done) => {
     setTimeout(() => {
+      expect.assertions(1);
       expect(answerPhone(true)).resolves.toMatch('Oi!');
       done();
     }, 3000);
   });
   test('ocupado', (done) => {
-    setTimeout(() => {
-      expect.assertions(1);
-      expect(answerPhone(undefined)).rejects.toThrowError(new
-      Error('Infelizmente não podemos atender...'));
-      done();
-    }, 3000);
-  });
+    expect.assertions(1);
+    expect(answerPhone(false)).rejects.toThrowError(new
+    Error('Infelizmente não podemos atender...'));
+    done();
+  }, 3000);
 });
