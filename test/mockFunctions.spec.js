@@ -20,14 +20,14 @@ describe('verifica as funções e os mocks', () => {
   mockFunctions.subtract = jest.fn().mockImplementation((a, b) => a - b);
   mockFunctions.multiply = jest.fn().mockImplementation((a, b) => a * b);
   mockFunctions.divide = jest.fn().mockImplementation((a, b) => a / b);
-  mockFunctions.power = jest.fn().mockImplementation((a, b) => a ** b); 
+  mockFunctions.power = jest.fn().mockImplementation((a, b) => a ** b);
   mockFunctions.factorial = jest.fn().mockImplementation((a) => {
-    let number = [];
+    const number = [];
     for (let i = 1; i <= a; i += 1) {
       number.push(i);
     }
     return number.reduce((acc, curr) => acc * curr);
-  })
+  });
 
   test('testa função add', () => {
     expect(mockFunctions.add(1, 2)).toEqual(3);
