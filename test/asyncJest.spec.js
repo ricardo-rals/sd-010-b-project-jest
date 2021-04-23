@@ -22,4 +22,6 @@ describe('o retorno do telefonema', () => {
   ));
 });
 
+// Pra testar, mudei detalhes das respostas e o teste não passou. Por isso acredito que esteja correto.
+
 // expect(() => answerPhone(false).toThrow('Infelizmente não podemos atender...'))
