@@ -20,6 +20,6 @@ describe('o retorno do telefonema', () => {
     // assert.fail();
     // Insira seu teste assíncrono aqui
     const message = 'Infelizmente não podemos atender...';
-    return expect(answerPhone(false)).rejects.toEqual(new Error(message));
+    return expect(answerPhone(false)).rejects.toStrictEqual(new Error(message));
   });
 });
