@@ -13,14 +13,13 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 describe('o retorno do telefonema', () => {
   test('atende', async () => {
     const answerTrue = await answerPhone(true);
-    
     expect(answerTrue).toBe('Oi!');
   });
   test('ocupado', async () => {
     try {
       await answerPhone(false);
     } catch (error) {
-      expect(error).toEqual(Error('Infelizmente não podemos atender...'))
+      expect(error).toEqual(Error('Infelizmente não podemos atender...'));
     }
   });
 });
