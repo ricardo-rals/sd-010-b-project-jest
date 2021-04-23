@@ -15,8 +15,8 @@ describe('o retorno do telefonema', () => {
     // Insira seu teste assíncrono aqui
     await expect(answerPhone(true)).resolves.toBe('Oi!');
   });
-  test('ocupado', () => {
-    return expect(answerPhone()).rejects.toMatch('Infelizmente não podemos atender...');
+  test('ocupado', async () => {
+    await expect(answerPhone(false)).rejects.toBe('Infelizmente não podemos atender...');
     // Insira seu teste assíncrono aqui
   });
 });
