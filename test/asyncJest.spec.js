@@ -17,9 +17,10 @@ describe('o retorno do telefonema', () => {
       expect(response).toEqual('Oi!');
     });
   });
-  test('ocupado', () => expect(answerPhone(false)).rejects.toThrow(
-    new Error('Infelizmente não podemos atender...'),
-  ));
+  test('ocupado', () =>
+    expect(answerPhone(false)).rejects.toEqual(
+      Error('Infelizmente não podemos atender...'),
+    ));
 });
 
 // Pra testar, mudei detalhes das respostas e o teste não passou. Por isso acredito que esteja correto.

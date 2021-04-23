@@ -16,3 +16,5 @@ const fetchURL = () => new Promise(function (resolve, reject) {
 });
 
 module.exports = { fetchURL };
+
+// console.log(fetchURL().then((data) => console.log(data)))
