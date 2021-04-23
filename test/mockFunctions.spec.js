@@ -56,7 +56,6 @@ describe('verifica as funções e os mocks', () => {
     expect(mockFunctions.divide(1331, 11)).toEqual(121);
   });
   test('testa função power', () => {
-    // mockFunctions.multiply.mockReturnValue(pow * a);
     mockFunctions.power.mockImplementation((a, b) => {
       let pow = 1;
       for (let i = 0; i < b; i += 1) {
@@ -71,11 +70,18 @@ describe('verifica as funções e os mocks', () => {
     expect(mockFunctions.power(1, 10)).toEqual(1);
     expect(mockFunctions.power(0, 0)).toEqual(1);
   });
-  /* test('testa função factorial', () => {
+  test('testa função factorial', () => {
+    mockFunctions.factorial.mockImplementation((a) => {
+      for (let i = a - 1; i >= 1; i -= 1) { // source: https://www.freecodecamp.org/news/how-to-factorialize-a-number-in-javascript-9263c89a4b38/
+        a *= i;
+      }
+      return a;
+    });
+
     expect(mockFunctions.factorial(5)).toEqual(120);
     expect(mockFunctions.factorial(10)).toEqual(3628800);
     expect(mockFunctions.factorial(3)).toEqual(6);
     expect(mockFunctions.factorial(8)).toEqual(40320);
     expect(mockFunctions.factorial(2)).toEqual(2);
-  }); */
+  });
 });
