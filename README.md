@@ -69,7 +69,7 @@ Lembre-se também de **não modificar** os describes dos tests na pasta `test`. 
 
   - Serão dois dias de projeto.
 
-  - Data de entrega para avaliação final do projeto: `DD/MM/YYYY - 14:00h`.
+  - Data de entrega para avaliação final do projeto: `30/04/2021 - 14:00h`.
 
 ---
 
@@ -90,6 +90,7 @@ Lembre-se também de **não modificar** os describes dos tests na pasta `test`. 
   * Agora, crie uma branch onde você vai guardar os `commits` do seu projeto
     * Você deve criar uma branch no seguinte formato: `nome-de-usuario-nome-do-projeto`
     * Exemplo: `git checkout -b joaozinho-project-jest`
+  * Rode o comando `npm install`
 
 3. Quando fizer mudanças, adicione-as ao _stage_ do Git e faça um `commit`
   * Verifique que as mudanças ainda não estão no _stage_
@@ -237,7 +238,7 @@ Use o conteúdo sobre [Code Review](https://app.betrybe.com/course/real-life-eng
 
 Ao finalizar e submeter o projeto, não se esqueça de avaliar sua experiência preenchendo o formulário. Leva menos de 3 minutos!
 
-Link: [FORMULÁRIO DE AVALIAÇÃO DE PROJETO](https://bit.ly/2OfLJPn)
+Link: [FORMULÁRIO DE AVALIAÇÃO DE PROJETO](https://bit.ly/3ta7hA0)
 
 O avaliador automático não necessariamente avalia seu projeto na ordem em que os requisitos aparecem no readme. Isso acontece para deixar o processo de avaliação mais rápido. Então, não se assuste se isso acontecer, ok?
 
