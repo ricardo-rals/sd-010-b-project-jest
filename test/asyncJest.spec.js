@@ -13,7 +13,7 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 describe('o retorno do telefonema', () => {
   test('atende', () => {
     assert.fail();
-    // Insira seu teste assíncrono aqui teste
+    // Insira seu teste assíncrono aqui testea
   });
   test('ocupado', () => {
     assert.fail();
