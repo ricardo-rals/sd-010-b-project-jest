@@ -28,7 +28,7 @@ describe('verifica as funções e os mocks', () => {
     }
     return fact;
   });
-// reference source: https://www.programiz.com/javascript/examples/factorial
+  // reference source: https://www.programiz.com/javascript/examples/factorial
   test('testa função add', () => {
     expect(mockFunctions.add(1, 2)).toEqual(3);
     expect(mockFunctions.add(8, 37)).toEqual(45);
