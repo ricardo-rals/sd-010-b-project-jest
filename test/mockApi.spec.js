@@ -37,3 +37,5 @@ describe('verifica o usuário', () => {
     })
   ));
 });
+
+const testes = jest.fn(() => testes);
