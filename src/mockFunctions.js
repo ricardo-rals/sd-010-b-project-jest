@@ -31,14 +31,3 @@ module.exports = {
   power,
   factorial,
 };
-
-function batata(a, b) {
-  let total = 1;
-  for (let i = 0; i < b; i += 1) {
-    total *= a;
-    console.log(total);
-    console.log(i);
-  }
-  return total;
-}
-console.log(batata(2, 10));
