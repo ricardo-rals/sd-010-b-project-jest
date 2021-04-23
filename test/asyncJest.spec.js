@@ -19,11 +19,7 @@ describe('o retorno do telefonema', () => {
 
   test('ocupado', async () => {
     expect.assertions(1);
-
-    try {
-      await answerPhone(false);
-    } catch (error) {
-      expect(error).toEqual(new Error('Infelizmente não podemos atender...')); // tirar duvidas sobre isso.
-    }
+    // pegeui a dica com Thiago Leite.
+    await expect(answerPhone(false)).rejects.toThrow('Infelizmente não podemos atender...');
   });
 });
