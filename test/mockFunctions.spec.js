@@ -17,6 +17,19 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 describe('verifica as funções e os mocks', () => {
   // Crie suas mock functions aqui
 
+  mockFunctions.add = jest.fn().mockImplementation((a, b) => a + b);
+  mockFunctions.subtract = jest.fn().mockImplementation((a, b) => a - b);
+  mockFunctions.multiply = jest.fn().mockImplementation((a, b) => a * b);
+  mockFunctions.divide = jest.fn().mockImplementation((a, b) => a / b);
+  mockFunctions.power = jest.fn().mockImplementation((a, b) => a ** b);
+  // Preferi não perder muito tempo construindo a lógica do fatorial, peguei a idéia desse post:
+  // https://stackoverflow.com/questions/3959211/what-is-the-fastest-factorial-function-in-javascript
+  mockFunctions.factorial = jest.fn().mockImplementation((a) => {
+    if (a < 1) {
+      return 1;
+    }
+    return mockFunctions.factorial(a - 1) * a;
+  });
 
   test('testa função add', () => {
     expect(mockFunctions.add(1, 2)).toEqual(3);
