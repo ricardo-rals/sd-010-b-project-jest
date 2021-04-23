@@ -23,7 +23,7 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe('verifica o usuário', () => {
-  // Crie sua mock da função fetchURL() aqui
+  // Agradeço ao Luanderson por me explicar a diferença entre mockReturnValue e mockResolvedValue https://jestjs.io/pt-BR/docs/mock-function-api
   api.fetchURL = jest.fn().mockResolvedValue({
     gender: 'male',
     name: { title: 'Mr', first: 'Antônio', last: 'Britto' },
