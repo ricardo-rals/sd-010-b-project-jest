@@ -9,14 +9,16 @@ a função recebe como parâmetro true e false, respectivamente.
 
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
-
+// console.log(answerPhone(true));//.then((data) => console.log(data));
 describe('o retorno do telefonema', () => {
   test('atende', () => {
-    expect(1).toBe(1);
+   return answerPhone(true).then((value) => {
+     expect(value).toBe('Oi!')
+   })
     // Insira seu teste assíncrono aqui
   });
   test('ocupado', () => {
-    expect(1).toBe(1);
+    return expect(answerPhone(false)).rejects.toThrow('Infelizmente não podemos atender...')
     // Insira seu teste assíncrono aqui
   });
 });
