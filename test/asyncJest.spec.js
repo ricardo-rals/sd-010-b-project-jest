@@ -7,6 +7,7 @@ a função recebe como parâmetro true e false, respectivamente.
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
+/* consulta para solução: https://jestjs.io/pt-BR/docs/asynchronous */
 describe('o retorno do telefonema', () => {
   test('atende', () =>
     answerPhone('true').then((answer) => { /* ao adotar 'true' como parâmetro, então espera-se que a resposta da função answerPhone seja a resposta "answer", que é igual a 'Oi!' */

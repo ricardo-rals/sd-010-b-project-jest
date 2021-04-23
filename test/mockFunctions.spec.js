@@ -1,5 +1,8 @@
 const mockFunctions = require('../src/mockFunctions');
 
+const { multiply, add, subtract, divide, power, factorial } = mockFunctions;
+
+jest.mock('../src/mockFunctions');
 /*
 Criamos uma série de funções com eficiência duvidosa.
 Elas estão no arquivo 'src/mockFunctions.js'.
@@ -15,7 +18,30 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe('verifica as funções e os mocks', () => {
-  // Crie suas mock functions aqui
+  /* mock da função add */
+  add.mockImplementation((a, b) => a + b);
+
+  /* mock da função subtract */
+  subtract.mockImplementation((a, b) => a - b);
+
+  /* mock da função multiply */
+  multiply.mockImplementation((a, b) => a * b);
+
+  /* mock da função divide */
+  divide.mockImplementation((a, b) => a / b);
+
+  /* mock da função power */
+  power.mockImplementation((a, b) => a ** b);
+
+  /* mock da função factorial */
+  /* Consulta para solução: <https://dev.to/cesareferrari/using-a-for-loop-to-output-a-factorial-4d6l#:~:text=One%20way%20to%20use%20a,a%20factorial%20of%20an%20integer.&text=This%20calculation%20seems%20a%20very,product%20of%20the%20previous%20numbers.&text=This%20is%20an%20arrow%20function,integer%20as%20its%20sole%20argument.> */
+  factorial.mockImplementation((a) => {
+    let fullFactorial = a;
+    for (let index = 1; index < a; index += 1) {
+      fullFactorial *= index;
+    }
+    return fullFactorial;
+  });
 
   test('testa função add', () => {
     expect(mockFunctions.add(1, 2)).toEqual(3);
