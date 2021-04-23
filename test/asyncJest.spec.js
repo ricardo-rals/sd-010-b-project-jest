@@ -17,13 +17,14 @@ describe('o retorno do telefonema', () => {
     expect.assertions(1);
     return answerPhone(true).then((answer) => {
       expect(answer).toEqual('Oi!');
-    }); 
+    });
   });
-  test('ocupado', () => {    expect.assertions(1);
+  test('ocupado', () => { 
+    expect.assertions(1);
     return answerPhone(false).catch((answer) => {
       expect(answer.message).toEqual('Infelizmente não podemos atender...');
-    }); 
-      // tive que olhar varios repositorios para resolver. encontrei este .message no da [Mariana Mohr]
+    });
+    // tive que olhar varios repositorios para resolver. encontrei este .message no da [Mariana Mohr]
     // assert.fail();
   });
 });
