@@ -22,7 +22,7 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 describe('quem sobreviveu?', () => {
   // Recebi a orientação do colega Marconi Moreira T10 e de Luanderson por me explicar o conceito de beforeEach
   beforeEach(() => {
-  adventure.randomAttack()
+    adventure.randomAttack();
   });
 
   test('depois da primeira aventura', () => {
