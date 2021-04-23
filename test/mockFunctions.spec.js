@@ -8,15 +8,34 @@ não como estão sendo feitos no arquivo original.
 A idéia é que os novos testes sobrescrevam os testes
 importados apenas na suite de testes abaixo.
 
-Importante! A correção de código via mock functions não é uma aplicação usual.
+Importante!  A correção de código via mock functions não é uma aplicação usual.
 O foco aqui é a utilização de mock functions.
 
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe('verifica as funções e os mocks', () => {
-  // Crie suas mock functions aqui
-
+  mockFunctions.add = jest.fn().mockImplementation((a, b) => a + b);
+  mockFunctions.subtract = jest.fn().mockImplementation((a, b) => a - b);
+  mockFunctions.multiply = jest.fn().mockImplementation((a, b) => a * b);
+  mockFunctions.divide = jest.fn().mockImplementation((a, b) => a / b);
+  mockFunctions.power = jest.fn().mockImplementation((a, b) => {
+    let result = a;
+    if (a !== 0 && b !== 0) {
+      for (let index = 1; index < b; index += 1) {
+        result *= a;
+      }
+      return result;
+    }
+    return 1;
+  });
+  mockFunctions.factorial = jest.fn().mockImplementation((n) => {
+    let result = 1;
+    for (let index = 1; index <= n; index += 1) {
+      result *= index;
+    }
+    return result;
+  });
   test('testa função add', () => {
     expect(mockFunctions.add(1, 2)).toEqual(3);
     expect(mockFunctions.add(8, 37)).toEqual(45);
