@@ -21,13 +21,10 @@ function fatorial(a) {
   }
   return valor;
 }
-
-function exp (a, b) {
+function exp(a, b) {
   let total = 1;
   for (let i = 0; i < b; i += 1) {
     total *= a;
-    console.log(total);
-    console.log(i);
   }
   return total;
 }
