@@ -1,4 +1,5 @@
 const mockFunctions = require('../src/mockFunctions');
+
 const { multiply, power, factorial, add, subtract, divide } = mockFunctions;
 
 /*
@@ -26,7 +27,7 @@ describe('verifica as funções e os mocks', () => {
   factorial.mockImplementation((a, b) => {
     let fact = 1;
     for (b = 1; b <= a; b += 1) {
-      fact *= b;
+      fact *= b
     };
     return fact;
   });
