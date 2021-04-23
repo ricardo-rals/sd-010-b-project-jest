@@ -26,9 +26,9 @@ describe('verifica o usuário', () => {
   const mockApi = {
     gender: 'male',
     name: { first: 'Antônio', last:'Britto' },
-    email:'tunico@bol.com.br',
+    email: 'tunico@bol.com.br',
     location: {
-      country:'Brazil',
+      country: 'Brazil',
     },
     login: {
       username: 'tunicao123',
