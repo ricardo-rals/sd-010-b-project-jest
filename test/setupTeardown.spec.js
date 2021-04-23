@@ -20,7 +20,9 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe('quem sobreviveu?', () => {
-  // Adicione seu código aqui
+  // remove um dos aventureiros toda vez que é chamada,  ela deve funcionar entre cada teste.
+  beforeEach(() => adventure.randomAttack());
+  afterEach(() => console.log(adventure.specialists)); // Para ficar mais visível, imprima na tela após cada teste o grupo de aventureiros restante.
 
   test('depois da primeira aventura', () => {
     expect(adventure.specialists.length).toBe(5);
