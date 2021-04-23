@@ -23,9 +23,15 @@ describe('quem sobreviveu?', () => {
   beforeEach(() => {
     adventure.randomAttack();
   });
+
   afterEach(() => {
     console.log(adventure.specialists);
   });
+
+  afterAll(() => {
+    console.log(adventure.specialists[0]);
+  });
+
   test('depois da primeira aventura', () => {
     expect(adventure.specialists.length).toBe(5);
   });
