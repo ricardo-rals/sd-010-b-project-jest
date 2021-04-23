@@ -17,14 +17,18 @@ describe('o retorno do telefonema', () => {
       expect(response).toStrictEqual('Oi!');
     });
   });
-  test('ocupado', () => {
+  test('ocupado', async () => {
     expect.assertions(1);
-    return answerPhone().then((response) => {
-      expect(response).toBe(Error('Infelizmente não podemos atender...'));
-    });
+    try {
+      await answerPhone(false);
+    } catch (error) {
+      expect(error).toEqual(Error('Infelizmente não podemos atender...'));
+    }
+  //  return  expect(response).toEqual(Error('Infelizmente não podemos atender...'));
+  // });
   });
 });
 
-// Com a ajuda dos colegas Gabriel , Alessandra e outros, discutimos a respeito do return,
+// Com a ajuda dos colegas Lucas Ribeiro, Roger e Fabio Marturano  e outros, discutimos a respeito do return,
 // Na segunda operação de Error, usando o Try Catch, onde ele não necessita de um return,
 // Ja que ele ja funciona Assincronamente.
