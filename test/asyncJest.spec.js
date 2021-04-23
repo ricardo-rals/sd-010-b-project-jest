@@ -14,7 +14,7 @@ describe('o retorno do telefonema', () => {
   test('atende', async () => {
     // assert.fail();
     // Insira seu teste assíncrono aqui
-    const atende = await answerPhone('Alô');
+    const atende = await answerPhone(true);
     expect(typeof atende).toBe('string')
     expect(atende).toEqual('Oi!')
   });
@@ -22,7 +22,7 @@ describe('o retorno do telefonema', () => {
     // assert.fail();
     // Insira seu teste assíncrono aqui
     try {
-      await answerPhone();
+      await answerPhone(false);
     } catch (error) {
       expect(error).toEqual(new Error ('Infelizmente não podemos atender...'))
     }
