@@ -37,14 +37,16 @@ describe('verifica as funções e os mocks', () => {
     expect(mockFunctions.subtract(23, -108)).toEqual(131);
     expect(mockFunctions.subtract(-133, -29)).toEqual(-104);
   });
-  /* test('testa função multiply', () => {
+  test('testa função multiply', () => {
+    mockFunctions.multiply.mockImplementation((a, b) => a * b);
+
     expect(mockFunctions.multiply(1, 2)).toEqual(2);
     expect(mockFunctions.multiply(0, 5)).toEqual(0);
     expect(mockFunctions.multiply(-4, 9)).toEqual(-36);
     expect(mockFunctions.multiply(-12, -7)).toEqual(84);
     expect(mockFunctions.multiply(19, 23)).toEqual(437);
   });
-  test('testa função divide', () => {
+  /* test('testa função divide', () => {
     expect(mockFunctions.divide(169, 13)).toEqual(13);
     expect(mockFunctions.divide(-1900, 5)).toEqual(-380);
     expect(mockFunctions.divide(42, 7)).toEqual(6);
