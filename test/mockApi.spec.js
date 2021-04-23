@@ -22,7 +22,6 @@ Dica: Utilizem os métodos jest.fn() ou jest.spyOn().
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 const infos = {
-
   gender: 'male',
   name: { title: 'Ms', first: 'Antônio', last: 'Britto' },
   location: {
@@ -58,7 +57,6 @@ const infos = {
     thumbnail: 'https://randomuser.me/api/portraits/thumb/women/7.jpg',
   },
   nat: 'IE',
-
 };
 describe('verifica o usuário', () => {
   // Crie sua mock da função fetchURL() aqui
