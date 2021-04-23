@@ -11,19 +11,16 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe('o retorno do telefonema', () => {
-  test('atende', (done) => {
+  test('atende', async () => {
     // Insira seu teste assíncrono aqui
     // npm test nome-arquivo.test
-    const reso =  answerPhone()
-    expect(reso).toBe('Oi!');
-    done();
-
+    const reso = await answerPhone(true);
+    expect(reso).toEqual('Oi!');
   });
-  test('ocupado', (done) => {
+  test('ocupado', () => {
     // Insira seu teste assíncrono aqui
     // npm run lint
-    const rej =  answerPhone()
-    expect(rej).toBe('Infelizmente não podemos atender...');
-    done();
+    const rej = answerPhone();
+    return expect(rej).rejects.toEqual(Error('Infelizmente não podemos atender...'));
   });
 });
