@@ -21,7 +21,11 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 
 describe('quem sobreviveu?', () => {
   // Adicione seu código aqui
-
+  // const fetch = jest.spyOn(api, 'fetchURL');
+  const heroes = jest.spyOn(adventure, 'randomAttack');
+  beforeEach(() => {
+    heroes.mockClear(adventure.randomAttack());
+  });
   test('depois da primeira aventura', () => {
     expect(adventure.specialists.length).toBe(5);
   });
