@@ -13,6 +13,7 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe('verifica as funções e os mocks', () => {
+<<<<<<< HEAD
   mockFunctions.add = jest.fn(mockFunctions, 'add').mockImplementation((a, b) => a + b);
   mockFunctions.subtract = jest.fn(mockFunctions, 'subtract').mockImplementation((a, b) => a - b);
   mockFunctions.multiply = jest.fn(mockFunctions, 'mutiply').mockImplementation((a, b) => a * b);
@@ -26,6 +27,22 @@ describe('verifica as funções e os mocks', () => {
     return factor;
   });
   // mock
+=======
+  mockFunctions.add = jest.fn((a, b) => a + b);
+  mockFunctions.subtract = jest.fn((a, b) => a - b);
+  mockFunctions.multiply = jest.fn((a, b) => a * b);
+  mockFunctions.divide = jest.fn((a, b) => a / b);
+  mockFunctions.power = jest.fn((a, b) => a ** b);
+  mockFunctions.factorial = jest.fn((n) => {
+    if (n === 0) return 1;
+    let fac = 1;
+    for (let i = n; i > 0; i -= 1) {
+      fac *= i;
+    }
+    return fac;
+  });
+
+>>>>>>> e413095f302b7b2f0a2984666a6271e86b35fdf2
   test('testa função add', () => {
     expect(mockFunctions.add(1, 2)).toEqual(3);
     expect(mockFunctions.add(8, 37)).toEqual(45);

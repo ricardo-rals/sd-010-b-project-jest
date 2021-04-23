@@ -20,7 +20,7 @@ describe('quem sobreviveu?', () => {
   beforeEach(() => {
     adventure.randomAttack();
   });
-  // beforeEach executa Executa uma função antes que cada um dos testes neste arquivo seja executado...
+  // beforeEach executa Executa uma função antes que cada um dos testes seja executado
   test('depois da primeira aventura', () => {
     expect(adventure.specialists.length).toBe(5);
   });
