@@ -20,7 +20,7 @@ describe('o retorno do telefonema', () => {
   test('ocupado', () => {
     expect.assertions(1);
     return answerPhone().catch((error) => {
-      expect(error).to(new Error('Infelizmente não podemos atender...'));
+      expect(error).toEqual(new Error('Infelizmente não podemos atender...'));
     });
   });
 });
