@@ -32,7 +32,7 @@ describe('verifica o usuário', () => {
     },
     location: {
       street: {
-        number: 8682,
+        number: 86829,
         name: 'Mevlana Cd',
       },
       city: 'Campo Grande',
