@@ -42,6 +42,6 @@ describe('quem sobreviveu?', () => {
   });
   test('depois da quinta aventura', async () => {
     await expect(adventure.specialists.length).toBe(1);
-    console.log(`Parabéns ${adventure.specialists[0].nome} por ser o mais bravo dos guerreiros!`)
+    console.log(`Parabéns ${adventure.specialists[0].nome} por ser o mais bravo dos guerreiros!`);
   });
 });
