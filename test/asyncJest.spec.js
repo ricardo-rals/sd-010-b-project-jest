@@ -20,3 +20,12 @@ describe('o retorno do telefonema', () => {
     // Insira seu teste assíncrono aqui
   });
 });
+
+
+
+const answerPhone = (answer) =>
+  new Promise(function (resolve, reject) {
+    setTimeout(
+      answer ? resolve('Oi!') : reject(new Error('Infelizmente não podemos atender...')), 3000,
+    );
+  });
