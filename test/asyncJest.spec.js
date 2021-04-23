@@ -21,7 +21,7 @@ describe('o retorno do telefonema', () => {
     expect.assertions(1);
 
     return answerPhone(false).catch((error) => {
-      expect(error).toEqual(error);
+      expect(error).toEqual(new Error('Infelizmente não podemos atender...'));
     });
   });
 });
