@@ -42,4 +42,3 @@ describe('quem sobreviveu?', () => {
 //Source:https://jestjs.io/pt-BR/docs/cli Verbose,WatchAll
 
 
-
