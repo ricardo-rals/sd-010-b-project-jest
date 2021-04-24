@@ -50,4 +50,4 @@ describe('quem sobreviveu?', () => {
     expect(adventure.specialists.length).toBe(1);
   });
 });
-/* Feito em colaboração com Felippe Corrêa, Renan Braga, Lucas Lotar e João Herculano */
+/* Feito com colaboração com Felippe Corrêa, Renan Braga, Lucas Lotar e João Herculano */
