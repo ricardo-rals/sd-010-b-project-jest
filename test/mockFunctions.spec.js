@@ -30,6 +30,7 @@ jest.mock('../src/mockFunctions', () => ({
 
 describe('verifica as funções e os mocks', () => {
   // Crie suas mock functions aqui
+  expect.assertions(5);
 
   test('testa função add', () => {
     expect(mockFunctions.add(1, 2)).toEqual(3);
