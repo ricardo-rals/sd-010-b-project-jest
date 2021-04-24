@@ -13,6 +13,7 @@ D.Serafim iniciando o projeto-jest
 
 // revisei o assunto do dia para buscar ajuda:
 // https://app.betrybe.com/course/fundamentals/testes-automatizados-com-jest/primeiros-passos-no-jest/28999aac-68b5-4aca-8c58-f9356ad8a00f/conteudos/e7d63c82-6e88-45fa-87fa-478f85168f58/um-pouco-de-mao-na-massa/70e31b94-f7fb-47ea-bb0e-9cd89e42e022?use_case=next_button
+// https://jestjs.io/docs/expect#tothrowerror
 
 describe('o retorno do telefonema', () => {
   test('atende', () => {
@@ -23,6 +24,6 @@ describe('o retorno do telefonema', () => {
   test('ocupado', () => {
     // assert.fail();
     // Insira seu teste assíncrono aqui
-    expect(answerPhone(false)).rejects.toEqual('Infelizmente não podemos atender...');
+    expect(answerPhone(false)).rejects.toThrow('Infelizmente não podemos atender...');
   });
 });
