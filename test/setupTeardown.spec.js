@@ -20,21 +20,36 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe('quem sobreviveu?', () => {
-  // Adicione seu código aqui
+  const mockSpecialists = jest.fn();
+  mockSpecialists.mockImplementation(() => [{ nome: 'Tunico', classe: 'Mestre dos Magos' },
+    { nome: 'Cremoso', classe: 'Cavaleiro Negro' },
+    { nome: 'Gordinho', classe: 'Pirata' },
+    { nome: 'Lobo Solitário', classe: 'Samurai' },
+    { nome: 'Ousado', classe: 'Mago' },
+    { nome: 'Anjo Loiro', classe: 'Clérigo' }]);
+
+  beforeEach(() => {
+    mockSpecialists.mockRestore();
+  });
 
   test('depois da primeira aventura', () => {
+    adventure.randomAttack();
     expect(adventure.specialists.length).toBe(5);
   });
   test('depois da segunda aventura', () => {
+    adventure.randomAttack();
     expect(adventure.specialists.length).toBe(4);
   });
   test('depois da terceira aventura', () => {
+    adventure.randomAttack();
     expect(adventure.specialists.length).toBe(3);
   });
   test('depois da quarta aventura', () => {
+    adventure.randomAttack();
     expect(adventure.specialists.length).toBe(2);
   });
   test('depois da quinta aventura', () => {
+    adventure.randomAttack();
     expect(adventure.specialists.length).toBe(1);
   });
 });
