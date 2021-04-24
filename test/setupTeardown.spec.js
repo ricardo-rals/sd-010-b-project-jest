@@ -52,4 +52,4 @@ describe('quem sobreviveu?', () => {
   });
 });
 
-// fonte de estudo para resolução do exercicio 4 no Discord , Rafael Mathias
+// fonte de  estudo para resolução do exercicio 4 no Discord , Rafael Mathias
