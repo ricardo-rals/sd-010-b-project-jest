@@ -20,21 +20,34 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe('quem sobreviveu?', () => {
-  // Adicione seu código aqui
-
-  test('depois da primeira aventura', () => {
+  test('depois da primeira aventura', (done) => {
+    adventure.specialists.splice(adventure.randomSpecialist, 1);
     expect(adventure.specialists.length).toBe(5);
+    done();
   });
-  test('depois da segunda aventura', () => {
+
+  test('depois da segunda aventura', (done) => {
+    adventure.specialists.splice(adventure.randomSpecialist, 1);
     expect(adventure.specialists.length).toBe(4);
+    done();
   });
-  test('depois da terceira aventura', () => {
+
+  test('depois da terceira aventura', (done) => {
+    adventure.specialists.splice(adventure.randomSpecialist, 1);
     expect(adventure.specialists.length).toBe(3);
+    done();
   });
-  test('depois da quarta aventura', () => {
+
+  test('depois da quarta aventura', (done) => {
+    adventure.specialists.splice(adventure.randomSpecialist, 1);
     expect(adventure.specialists.length).toBe(2);
+    done();
   });
-  test('depois da quinta aventura', () => {
+
+  test('depois da quinta aventura', (done) => {
+    adventure.specialists.splice(adventure.randomSpecialist, 1);
     expect(adventure.specialists.length).toBe(1);
+    done();
   });
+// Diegho e pessoal do Discord me deram uma dica para colocar adventure.specialists antes do expect.
 });
