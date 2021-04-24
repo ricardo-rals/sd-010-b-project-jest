@@ -26,7 +26,7 @@ const returApi = {
   name: { first: 'Antônio', last: 'Britto' },
   location: { country: 'Brazil' },
   email: 'tunico@bol.com.br',
-  login: { username: 'tunicao123', password: '1234567890' }
+  login: { username: 'tunicao123', password: '1234567890' },
 };
 
 describe('verifica o usuário', () => {
