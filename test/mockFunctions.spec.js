@@ -16,11 +16,13 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 
 describe('verifica as funções e os mocks', () => {
   // Crie suas mock functions aqui
+  // Source https://jestjs.io/pt-BR/docs/mock-function-api#mockfnmockimplementationfn
   mockFunctions.add = jest.fn().mockImplementation((a, b) => a + b);
   mockFunctions.subtract = jest.fn().mockImplementation((a, b) => a - b);
   mockFunctions.multiply = jest.fn().mockImplementation((a, b) => a * b);
   mockFunctions.divide = jest.fn().mockImplementation((a, b) => a / b);
   mockFunctions.power = jest.fn().mockImplementation((a, b) => a ** b);
+  // Source https://serprogramador.com.br/artigos/topico/javascript/Como-calcular-a-operacao-matematica-de-fatorial-com-JavaScript
   mockFunctions.factorial = jest.fn().mockImplementation((a) => {
     const fatorial = a;
     let resultado = fatorial;
