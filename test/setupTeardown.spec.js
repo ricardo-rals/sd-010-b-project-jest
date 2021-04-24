@@ -21,6 +21,10 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 
 describe('quem sobreviveu?', () => {
   // Adicione seu código aqui
+  // Antes de rodar cada teste será executada a função que exclui o especialista.
+  beforeEach(() => {
+    adventure.randomAttack();
+  });
 
   test('depois da primeira aventura', () => {
     expect(adventure.specialists.length).toBe(5);
