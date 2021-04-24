@@ -21,7 +21,8 @@ Sua missão aqui é:
 PS: Os codinomes dos aventureiros são reais! Tentem descobrir quem é quem!
 
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
-*/
+
+/* Codigo realizado de forma colaborativa entre Rafael Mathias, Felippe Correa Lima, João Herculano de Souza Neto, Renan Braga, foi acordado entre todos, que todos devem ser capaz de explicar o código e que tem total entendimento da lógica empregada para resolver o requisito do projeto. */
 
 describe('quem sobreviveu?', () => {
   // Adicione seu código aqui
