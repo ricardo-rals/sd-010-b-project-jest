@@ -16,7 +16,14 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 
 describe('verifica as funções e os mocks', () => {
   // Crie suas mock functions aqui
-
+  // fatorial retirado de: https://gist.github.com/macsousa/dccd2abb2c68c5958846824e975482d3
+  const fatorial = (n) => (n === 0 ? 1 : n * fatorial(n - 1));
+  mockFunctions.add = jest.fn((a, b) => a + b);
+  mockFunctions.subtract = jest.fn((a, b) => a - b);
+  mockFunctions.multiply = jest.fn((a, b) => a * b);
+  mockFunctions.divide = jest.fn((a, b) => a / b);
+  mockFunctions.power = jest.fn((a, b) => (a ** b));
+  mockFunctions.factorial = jest.fn(fatorial);
   test('testa função add', () => {
     expect(mockFunctions.add(1, 2)).toEqual(3);
     expect(mockFunctions.add(8, 37)).toEqual(45);
