@@ -23,7 +23,15 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 
 describe('quem sobreviveu?', () => {
   beforeEach(() => {
-    randomAttack();/* como imprimir o grupo de aventureiros restantes ? */
+    randomAttack();
+  });
+
+  afterEach(() => {
+    const arraysobreviventes = [];
+    adventure.specialists.forEach((specialist) => {
+      arraysobreviventes.push(`${specialist.nome}`);
+    });
+    console.log(`The survivors were: ${arraysobreviventes}`);
   });
 
   test('depois da primeira aventura', () => {
@@ -40,6 +48,6 @@ describe('quem sobreviveu?', () => {
   });
   test('depois da quinta aventura', () => {
     expect(adventure.specialists.length).toBe(1);
-    console.log(adventure.specialists[0].nome);
   });
 });
+/* Feito em colaboração com Felippe Corrêa, Renan Braga, Lucas Lotar e João Herculano */
