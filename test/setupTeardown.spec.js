@@ -21,20 +21,31 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 
 describe('quem sobreviveu?', () => {
   // Adicione seu código aqui
+  beforeEach(adventure.randomAttack);
 
   test('depois da primeira aventura', () => {
     expect(adventure.specialists.length).toBe(5);
+    const phrase = adventure.specialists.map((nome) => nome.nome);
+    console.log(`Survives: ${phrase}`);
   });
   test('depois da segunda aventura', () => {
     expect(adventure.specialists.length).toBe(4);
+    const phrase = adventure.specialists.map((nome) => nome.nome);
+    console.log(`Survives: ${phrase}`);
   });
   test('depois da terceira aventura', () => {
     expect(adventure.specialists.length).toBe(3);
+    const phrase = adventure.specialists.map((nome) => nome.nome);
+    console.log(`Survives: ${phrase}`);
   });
   test('depois da quarta aventura', () => {
     expect(adventure.specialists.length).toBe(2);
+    const phrase = adventure.specialists.map((nome) => nome.nome);
+    console.log(`Survives: ${phrase}`);
   });
   test('depois da quinta aventura', () => {
     expect(adventure.specialists.length).toBe(1);
+    const phrase = adventure.specialists.map((nome) => nome.nome);
+    console.log(`THE LAST WARRIOR: ${phrase}`);
   });
 });
