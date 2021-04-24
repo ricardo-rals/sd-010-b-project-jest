@@ -1,4 +1,7 @@
 const adventure = require('../src/setupTeardown');
+
+const { specialists } = adventure;
+
 /*
 Num universo não tão distante, um grupo de aventureiros da Trybe enfrentam uma série de testes.
 O grupo parte em direção ao sucesso, mas,
@@ -18,9 +21,19 @@ PS: Os codinomes dos aventureiros são reais! Tentem descobrir quem é quem!
 
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
-
 describe('quem sobreviveu?', () => {
   // Adicione seu código aqui
+  beforeEach(() => {
+    adventure.randomAttack();
+  });
+
+  afterEach(() => {
+    const game = [];
+    specialists.forEach((specialist) => {
+      game.push(`${specialist.nome}`);
+    });
+    console.log(`quem sobreviveu...${game}`);
+  });
 
   test('depois da primeira aventura', () => {
     expect(adventure.specialists.length).toBe(5);
@@ -38,3 +51,5 @@ describe('quem sobreviveu?', () => {
     expect(adventure.specialists.length).toBe(1);
   });
 });
+
+// fonte de estudo para resolução do exercicio 4 no Discord , Rafael Mathias
