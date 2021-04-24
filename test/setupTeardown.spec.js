@@ -16,6 +16,9 @@ Sua missão aqui é:
 PS: Os codinomes dos aventureiros são reais! Tentem descobrir quem é quem!
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
+
+// Feito em parceria com Rafael Mathias, Lucas Lotar, João Herculano e Felippe Corrêa
+
 describe('quem sobreviveu?', () => {
   beforeEach(() => {
     randomAttack();
