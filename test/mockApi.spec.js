@@ -20,7 +20,9 @@ presente no README.md do projeto.
 Dica: Utilizem os métodos jest.fn() ou jest.spyOn().
 
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
+
 */
+
 const returApi = {
   gender: 'male',
   name: { first: 'Antônio', last: 'Britto' },
