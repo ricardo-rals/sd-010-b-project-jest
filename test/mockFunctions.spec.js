@@ -20,7 +20,7 @@ jest.mock('../src/mockFunctions', () => ({
   multiply: jest.fn((a, b) => a * b),
   divide: jest.fn((a, b) => a / b),
   power: jest.fn((a, b) => a ** b),
-  factorial: jest.fn((a) => {
+  factorial: jest.fn((a) => { // Explicativo artigo de como realizar o fatorial e por que funciona, em inglês: https://www.freecodecamp.org/news/how-to-factorialize-a-number-in-javascript-9263c89a4b38/
     if (a < 0) return -1;
     if (a === 0) return 1;
 
