@@ -31,7 +31,7 @@ describe('quem sobreviveu?', () => {
     const name = adventure.specialists[0].nome;
     // const specialistClass = adventure.specialists[0].classe;
     // console.log(`The ${name} which class is ${specialistClass} has been survived!`);
-    console.log(`${name}`);
+    console.log(`The ${name} has been survived!`);
   });
 
   // console.table(adventure.specialists);
