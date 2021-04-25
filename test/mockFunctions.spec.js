@@ -1,5 +1,7 @@
 const mockFunctions = require('../src/mockFunctions');
 
+jest.mock('../src/mockFunctions');
+
 /*
 Criamos uma série de funções com eficiência duvidosa.
 Elas estão no arquivo 'src/mockFunctions.js'.
@@ -15,7 +17,27 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe('verifica as funções e os mocks', () => {
-  // Crie suas mock functions aqui
+  // Source: https://app.betrybe.com/course/fundamentals/testes-automatizados-com-jest/jest-simulando-comportamentos/4783a3a1-485b-4712-a293-b645c2f7ac40/conteudos/5f13b72b-17e9-4348-905b-582dc584a4e0/mockando-modulos/65ce99ff-280d-4b8d-bf4f-5a3b3abf8557?use_case=next_button
+
+  mockFunctions.add.mockImplementation((a, b) => a + b);
+
+  mockFunctions.subtract.mockImplementation((a, b) => a - b);
+
+  mockFunctions.multiply.mockImplementation((a, b) => a * b);
+
+  mockFunctions.divide.mockImplementation((a, b) => a / b);
+
+  // Source: https://imasters.com.br/desenvolvimento/conheca-o-operador-exponencial-javascript
+  mockFunctions.power.mockImplementation((a, b) => a ** b);
+
+  // Source: https://serprogramador.com.br/artigos/topico/javascript/Como-calcular-a-operacao-matematica-de-fatorial-com-JavaScript
+  mockFunctions.factorial.mockImplementation((a) => {
+    let fact = a;
+    for (let i = 1; i < a; i += 1) {
+      fact *= i;
+    }
+    return fact;
+  });
 
   test('testa função add', () => {
     expect(mockFunctions.add(1, 2)).toEqual(3);
