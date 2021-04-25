@@ -12,13 +12,14 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 // console.log(answerPhone(true));
 // console.log(answerPhone(false));
 
+// **SOURCE** https://jestjs.io/pt-BR/docs/asynchronous
 describe('o retorno do telefonema', () => {
-  const message = 'Infelizmente não podemos atender...';
+  const errorMessage = Error('Infelizmente não podemos atender...');
 
   test('atende', () => {
-    answerPhone(true).then((dataAnwser) => expect(dataAnwser).toEqual('Oi!'));
+    expect(answerPhone(true)).resolves.toEqual('Oi!');
   });
   test('ocupado', () => {
-    answerPhone(false).then((dataAnwser) => expect(dataAnwser).toEqual(Error(message)));
+    expect(answerPhone(false)).rejects.toEqual(errorMessage);
   });
 });
