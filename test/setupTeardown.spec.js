@@ -21,7 +21,16 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 
 describe('quem sobreviveu?', () => {
   // Adicione seu código aqui
-
+  beforeEach(() => adventure.randomAttack());
+  afterEach(() => console.log(adventure.specialists));
+  // A função "afterAll" encontrei no seguinte site:
+  // https://jestjs.io/docs/setup-teardown#one-time-setup
+  afterAll(() => {
+    console.log(
+      `${adventure.specialists[0].nome}, 
+      mais conhecido como ${adventure.specialists[0].classe} é o sobrevivente`,
+    );
+  });
   test('depois da primeira aventura', () => {
     expect(adventure.specialists.length).toBe(5);
   });
