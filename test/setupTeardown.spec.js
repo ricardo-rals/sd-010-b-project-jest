@@ -23,6 +23,7 @@ describe('quem sobreviveu?', () => {
   beforeEach(() => {
     adventure.randomAttack();
   });
+
   afterEach(() => {
     const survivorAdventure = [];
     adventure.specialists.forEach((specialist) => {
