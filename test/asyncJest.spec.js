@@ -14,11 +14,10 @@ describe('o retorno do telefonema', () => {
   it('atende', async () => {
     expect.assertions(1);
     const attended = await answerPhone(true);
-    expect(attended).toBe('Oi!');
+    expect(attended).toEqual('Oi!');
   });
   it('ocupado', async () => {
     expect.assertions(1);
-    const didNotAnswerPhone = await answerPhone(false).catch((err) => err);
-    expect(didNotAnswerPhone).toEqual(Error('Infelizmente não podemos atender...'));
+    expect(answerPhone(false)).rejects.toEqual('Infelizmente não podemos atender...');
   });
 });
