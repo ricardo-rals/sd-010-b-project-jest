@@ -10,13 +10,14 @@ a função recebe como parâmetro true e false, respectivamente.
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
+// console.log(answerPhone(true));
+// console.log(answerPhone(false));
+
 describe('o retorno do telefonema', () => {
   test('atende', () => {
-    assert.fail();
-    // Insira seu teste assíncrono aqui.
+    answerPhone(true).then((answerPhone) => expect(answerPhone).toEqual('Oi!'));
   });
   test('ocupado', () => {
-    assert.fail();
-    // Insira seu teste assíncrono aqui
+    answerPhone(false).then((answerPhone) => expect(answerPhone).toEqual('Infelizmente não podemos atender...'));
   });
 });
