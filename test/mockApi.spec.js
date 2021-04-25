@@ -17,7 +17,7 @@ independa de chamadas de API e retorne as seguintes informações do Tunico:
 Note que as informações devem estar de acordo com o JSON
 presente no README.md do projeto.
 
-Dica: Utilizem os métodos jest.fn() ou jest.spyOn().
+Dica: Utilizem os métodos jest.fn() ou jest.spyOn(). casa
 
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 
