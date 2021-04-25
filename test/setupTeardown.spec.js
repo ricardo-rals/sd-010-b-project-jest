@@ -18,7 +18,7 @@ PS: Os codinomes dos aventureiros são reais! Tentem descobrir quem é quem!
 
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
-// Projeto realizado em conjunto com Paulo Xavier
+
 describe('quem sobreviveu?', () => {
   // Adicione seu código aqui
   beforeEach(() => {
@@ -49,3 +49,5 @@ describe('quem sobreviveu?', () => {
     expect(adventure.specialists.length).toBe(1);
   });
 });
+
+// Projeto realizado em conjunto com Paulo Xavier
