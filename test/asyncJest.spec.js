@@ -15,13 +15,10 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 
 describe('o retorno do telefonema', () => {
   test('atende', () => {
-    answerPhone(true).then((dataAnwser) => {
-      return expect(dataAnwser).toEqual('Oi!');
-    });
+    answerPhone(true).then((dataAnwser) => expect(dataAnwser).toEqual('Oi!'));
   });
   test('ocupado', () => {
-    answerPhone(false).then((dataAnwser) => {
-      return expect(dataAnwser).toEqual('Infelizmente não podemos atender...');
-    });
+    answerPhone(false).then((dataAnwser) => expect(dataAnwser)
+    .toEqual('Infelizmente não podemos atender...'));
   });
 });

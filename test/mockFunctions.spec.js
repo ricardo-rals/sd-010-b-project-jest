@@ -18,11 +18,11 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 const factorialValue = (value) => {
   let resultado = value;
 
-  for (let i = 1; i < value; i++) {
-      resultado *= i;
+  for (let i = 1; i < value; i += 1) {
+    resultado *= i;
   }
   return resultado;
-}
+};
 
 // **SOURCE** https://jestjs.io/docs/mock-functions
 const generateMockFunctions = () => {
@@ -32,7 +32,7 @@ const generateMockFunctions = () => {
   mockFunctions.divide = jest.fn((number1, number2) => number1 / number2);
   mockFunctions.power = jest.fn((number1, number2) => number1 ** number2);
   mockFunctions.factorial = jest.fn((number) => factorialValue(number));
-}
+};
 
 describe('verifica as funções e os mocks', () => {
   generateMockFunctions();
