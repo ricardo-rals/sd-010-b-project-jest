@@ -14,8 +14,28 @@ O foco aqui é a utilização de mock functions.
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
+// **Source** https://serprogramador.com.br/artigos/topico/javascript/Como-calcular-a-operacao-matematica-de-fatorial-com-JavaScript
+const factorialValue = (value) => {
+  let resultado = value;
+
+  for (let i = 1; i < value; i++) {
+      resultado *= i;
+  }
+  return resultado;
+}
+
+// **SOURCE** https://jestjs.io/docs/mock-functions
+const generateMockFunctions = () => {
+  mockFunctions.add = jest.fn((number1, number2) => number1 + number2);
+  mockFunctions.subtract = jest.fn((number1, number2) => number1 - number2);
+  mockFunctions.multiply = jest.fn((number1, number2) => number1 * number2);
+  mockFunctions.divide = jest.fn((number1, number2) => number1 / number2);
+  mockFunctions.power = jest.fn((number1, number2) => number1 ** number2);
+  mockFunctions.factorial = jest.fn((number) => factorialValue(number));
+}
+
 describe('verifica as funções e os mocks', () => {
-  // Crie suas mock functions aqui
+  generateMockFunctions();
 
   test('testa função add', () => {
     expect(mockFunctions.add(1, 2)).toEqual(3);
