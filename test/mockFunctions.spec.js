@@ -1,5 +1,6 @@
 const mockFunctions = require('../src/mockFunctions');
 
+jest.mock('../src/mockFunctions');
 /*
 Criamos uma série de funções com eficiência duvidosa.
 Elas estão no arquivo 'src/mockFunctions.js'.
@@ -16,6 +17,24 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 
 describe('verifica as funções e os mocks', () => {
   // Crie suas mock functions aqui
+  //  Função add
+  mockFunctions.add.mockImplementation((a, b) => a + b);
+  //  Função subtract
+  mockFunctions.subtract.mockImplementation((a, b) => a - b);
+  //  Função multiply
+  mockFunctions.multiply.mockImplementation((a, b) => a * b);
+  //  Função divide
+  mockFunctions.divide.mockImplementation((a, b) => a / b);
+  // Função power
+  mockFunctions.power.mockImplementation((a, b) => a ** b);// Fonte da potenciação (Math.pow(base, expoente)): https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Math/pow
+  //  Função factorial -- Corrigido pelo lint pra ultilizar **.
+  mockFunctions.factorial.mockImplementation((a) => {
+    let result = 1;
+    for (let index = 1; index <= a; index += 1) {
+      result *= index;
+    }
+    return result;//  Fonte da fatoração por laço <for>:https://serprogramador.com.br/artigos/topico/javascript/Como-calcular-a-operacao-matematica-de-fatorial-com-JavaScript
+  });
 
   test('testa função add', () => {
     expect(mockFunctions.add(1, 2)).toEqual(3);
