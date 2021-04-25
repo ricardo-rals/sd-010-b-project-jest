@@ -9,14 +9,18 @@ a função recebe como parâmetro true e false, respectivamente.
 
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
-
+// Olhei Alan Tanaka porque não entendi sozinho o que era answerPhone recebia
 describe('o retorno do telefonema', () => {
   test('atende', () => {
-    assert.fail();
+    answerPhone(true).then((result) => {
+      expect(result).toEqual('Oi!');
+    });
     // Insira seu teste assíncrono aqui
   });
   test('ocupado', () => {
-    assert.fail();
+    answerPhone(false).then((result) => {
+      expect(result).toThrow('Infelizmente não podemos atender...');
+    });
     // Insira seu teste assíncrono aqui
   });
 });
