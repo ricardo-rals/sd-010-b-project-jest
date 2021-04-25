@@ -21,6 +21,19 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 
 describe('quem sobreviveu?', () => {
   // Adicione seu código aqui
+  beforeEach(() => {
+    adventure.randomAttack();
+  });
+  afterEach(() => {
+    console.table(adventure.specialists);
+  });
+  afterAll(() => {
+    const name = adventure.specialists[0].nome;
+    const specialistClass = adventure.specialists[0].classe;
+    console.log(`The ${name} which class is ${specialistClass} has been survived!`);
+  });
+
+  console.table(adventure.specialists);
 
   test('depois da primeira aventura', () => {
     expect(adventure.specialists.length).toBe(5);
