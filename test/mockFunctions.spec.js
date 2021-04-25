@@ -18,8 +18,6 @@ describe('verifica as funções e os mocks', () => {
   // Crie suas mock functions aqui
 
   test('testa função add', () => {
-    mockFunctions.add.mockImplementation((a, b) => a - b);
-    mockFunctions.add(1, 2);
     expect(mockFunctions.add(1, 2)).toEqual(3);
     expect(mockFunctions.add(8, 37)).toEqual(45);
     expect(mockFunctions.add(-11, 25)).toEqual(14);
