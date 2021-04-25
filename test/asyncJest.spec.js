@@ -12,12 +12,14 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 // Olhei Alan Tanaka porque não entendi sozinho o que era answerPhone recebia
 describe('o retorno do telefonema', () => {
   test('atende', () => {
+    expect.assertions(1);
     return answerPhone(true).then((result) => {
       expect(result).toEqual('Oi!');
     });
     // Insira seu teste assíncrono aqui
   });
   test('ocupado', () => {
+    expect.assertions(1);
     return answerPhone(false).catch((result) => {
       expect(result).toEqual(new Error('Infelizmente não podemos atender...'));
     });
