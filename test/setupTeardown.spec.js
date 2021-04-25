@@ -25,7 +25,7 @@ describe('quem sobreviveu?', () => {
     adventure.randomAttack();
   });
   afterEach(() => {
-    console.table(adventure.specialists);
+    console.log(adventure.specialists);
   });
   afterAll(() => {
     const name = adventure.specialists[0].nome;
@@ -34,7 +34,7 @@ describe('quem sobreviveu?', () => {
     console.log(`${name}`);
   });
 
-  console.table(adventure.specialists);
+  // console.table(adventure.specialists);
 
   test('depois da primeira aventura', () => {
     expect(adventure.specialists.length).toBe(5);
