@@ -20,3 +20,6 @@ describe('o retorno do telefonema', () => {
     await expect(answerPhone(false)).rejects.toThrow('Infelizmente não podemos atender...');
   });
 });
+
+// https://jestjs.io/pt-BR/docs/asynchronous
+// https://jestjs.io/pt-BR/docs/expect#expectassertionsn%C3%BAmero
