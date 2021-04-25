@@ -15,6 +15,20 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe('verifica as funções e os mocks', () => {
+  // no src ele tá exportando as funções. Então eu alcanço essas funções usando o mockFunctions.Nome função( ex: mockFunctions.add). Depois uso o jest.fn() pra simular como a função realmente deve ser.
+// QUem me lembrou do mockImplementation foi o meu colega Alexandre Damasceno. Link do PR dele: https://github.com/tryber/sd-010-b-project-jest/blob/e5cc1ce837f14e1661689c0aaed13c2602a31e3e/test/mockFunctions.spec.js
+// o mockImplementation pode ser usado para criar uma implementação nova em cima da função original.
+  mockFunctions.add = jest.fn().mockImplementation((a, b) => a + b);
+  mockFunctions.subtract = jest.fn().mockImplementation((a, b) => a - b);
+  mockFunctions.multiply = jest.fn().mockImplementation((a, b) => a * b);
+  mockFunctions.divide = jest.fn().mockImplementation((a, b) => a / b);
+  mockFunctions.power = jest.fn().mockImplementation((a, b) => a ** b);
+  mockFunctions.factorial = jest.fn().mockImplementation((a) => {
+    let result = 1;
+    for (let count = 1; count <= a; count += 1) {
+      result *= count;
+    } return result; // essa parte de fazer o fatorial usando FOR eu me lembrei por meio desta página: https://www.javascriptprogressivo.net/2018/12/Calculo-Fatorial-WHILE-FOR-Lacos-JS.html
+  });
   test('testa função add', () => {
     expect(mockFunctions.add(1, 2)).toEqual(3);
     expect(mockFunctions.add(8, 37)).toEqual(45);
