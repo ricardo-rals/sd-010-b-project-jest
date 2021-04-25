@@ -18,6 +18,6 @@ describe('o retorno do telefonema', () => {
   // A parte abaixo da função com o parâmetro False, eu apenas entendi a solução com o PR  do colega Matheus Bodra. Link do PR dele: https://github.com/tryber/sd-010-b-project-jest/blob/6d0a58f8590dc4c1a3cf8caaf04033c833d852d3/test/asyncJest.spec.js
   test('ocupado', async () => {
     const naoAtende = await answerPhone(false).catch((error) => error); // tem que usar o catch aqui.
-    expect(naoAtende).toBe(Error('Infelizmente não podemos atender...')); // atenção ao código no SRC.
+    expect(naoAtende).toEqual(Error('Infelizmente não podemos atender...')); // atenção ao código no SRC.
   });
 });
