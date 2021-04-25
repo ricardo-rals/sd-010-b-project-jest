@@ -14,7 +14,7 @@ describe('o retorno do telefonema', () => {
   test('atende', async () => { // o req pede pra ser assincrona, aí usa o await também.
     expect.assertions(1);
     const atendeu = await answerPhone(true);
-    expect(atendeu.toBe('Oi!'));
+    expect(atendeu).toBe('Oi!'); // errei várias vezes porque não tava fechando o parênteses no "atendeu".
   });
   // A parte abaixo da função com o parâmetro False, eu apenas entendi a solução com o PR  do colega Matheus Bodra. Link do PR dele: https://github.com/tryber/sd-010-b-project-jest/blob/6d0a58f8590dc4c1a3cf8caaf04033c833d852d3/test/asyncJest.spec.js
   test('ocupado', async () => {
