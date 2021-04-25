@@ -13,11 +13,12 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 // console.log(answerPhone(false));
 
 describe('o retorno do telefonema', () => {
-  const errorMessage = 'Infelizmente não podemos atender...';
+  const message = 'Infelizmente não podemos atender...';
+
   test('atende', () => {
-    answerPhone(true).then((dataAnwser) => expect(dataAnwser).resolves.toEqual('Oi!'));
+    answerPhone(true).then((dataAnwser) => expect(dataAnwser).toEqual('Oi!'));
   });
   test('ocupado', () => {
-    answerPhone(false).then((dataAnwser) => expect(dataAnwser).reject.toEqual(errorMessage));
+    answerPhone(false).then((dataAnwser) => expect(dataAnwser).toEqual(Error(message)));
   });
 });
