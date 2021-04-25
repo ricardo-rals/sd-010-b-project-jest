@@ -23,7 +23,19 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe('verifica o usuário', () => {
-  // Crie sua mock da função fetchURL() aqui
+  api.fetchURL = jest.fn().mockResolvedValue({ // pra alcançar a função fetchURL tive que fazer api.fetchURL.
+    // O jest.fn() vai dizer como deve ficar a função fetchURL. E o próprio site da Trybe diz que, quando for função assíncrona, deve usar o mockResolvedValue(value). E a forma que eu coloquei as informações novas aqui, foi pq tem que ser como está no README.
+    gender: 'male',
+    name: { first: 'Antônio', last: 'Britto' },
+    location: {
+      country: 'Brazil',
+    },
+    email: 'tunico@bol.com.br',
+    login: {
+      username: 'tunicao123',
+      password: '1234567890',
+    },
+  });
 
   test('verifica se o usuário é o tunico', async () => (
     api.fetchURL().then((user) => {
