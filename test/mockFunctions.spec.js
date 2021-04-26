@@ -13,10 +13,25 @@ O foco aqui é a utilização de mock functions.
 
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
-
+// questao 3
 describe('verifica as funções e os mocks', () => {
   // Crie suas mock functions aqui
-
+  const { add, subtract, multiply, divide, power, factorial } = mockFunctions;
+  add.mockImplementation((a, b) => a + b);
+  subtract.mockImplementation((a, b) => a - b);
+  multiply.mockImplementation((a, b) => a * b);
+  divide.mockImplementation((a, b) => a / b);
+  power.mockImplementation((a, b) => a ** b);
+  factorial.mockImplementation((a) => {
+    let acc = 1;
+    for (let i = 1; i <= a; i += 1) {
+      acc *= 1;
+    }
+    return acc;
+  });
+  test('testa função add', () => {
+    expect(mockFunctions.add(1, 2)).toEqual(3);
+  });
   test('testa função add', () => {
     expect(mockFunctions.add(1, 2)).toEqual(3);
     expect(mockFunctions.add(8, 37)).toEqual(45);
