@@ -24,7 +24,7 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 
 describe('verifica o usuário', () => {
   // Crie sua mock da função fetchURL() aqui
-const requestReturn = {
+  const requestReturn = {
     gender: 'male',
     name: {
       first: 'Antônio',
