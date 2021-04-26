@@ -28,9 +28,7 @@ describe('verifica o usuário', () => {
     gender: 'male',
     name: {
       first: 'Antonio',
-      last: 'Brazil',
-    },
-    location: {
+      last: 'Britto',
       country: 'Brazil',
     },
     email: 'tunico@bol.com.br',
