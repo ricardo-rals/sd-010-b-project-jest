@@ -50,4 +50,5 @@ describe('quem sobreviveu?', () => {
     done();
   });
 // Diegho e pessoal do Discord me deram uma dica para colocar adventure.specialists antes do expect.
+// source: https://www.youtube.com/watch?v=Eu1O9e4a2nY
 });
