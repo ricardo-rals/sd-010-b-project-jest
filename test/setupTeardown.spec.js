@@ -18,10 +18,15 @@ PS: Os codinomes dos aventureiros são reais! Tentem descobrir quem é quem!
 
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
-
+// Pra esse requisito eu li esse texto: https://jestjs.io/pt-BR/docs/setup-teardown
+// beforeEach e afterEach eu uso pra algo que preciso repetir em muitos testes. Nesse caso, eu preciso usar a função randomAttack antes de cada teste.
 describe('quem sobreviveu?', () => {
-  // Adicione seu código aqui
-
+  beforeEach(() => {
+    adventure.randomAttack();
+  });
+  afterEach(() => {
+    console.log(`${adventure.specialists[0].nome}`);
+  });
   test('depois da primeira aventura', () => {
     expect(adventure.specialists.length).toBe(5);
   });
