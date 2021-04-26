@@ -32,11 +32,11 @@ describe('verifica as funções e os mocks', () => {
 
   // Source: https://serprogramador.com.br/artigos/topico/javascript/Como-calcular-a-operacao-matematica-de-fatorial-com-JavaScript
   mockFunctions.factorial.mockImplementation((a) => {
-    let fact = a;
+    let factoring = a;
     for (let i = 1; i < a; i += 1) {
-      fact *= i;
+      factoring *= i;
     }
-    return fact;
+    return factoring;
   });
 
   test('testa função add', () => {
