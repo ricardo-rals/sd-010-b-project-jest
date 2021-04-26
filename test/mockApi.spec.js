@@ -38,9 +38,7 @@ const newObj = {
 };
 
 describe('verifica o usuário', () => {
-  jest.mock(api, () => ({
-    fetchURL: jest.fn().mockResolvedValue(newObj),
-  }));
+  api.fetchURL = jest.fn().mockResolvedValue(newObj);
 
   test('verifica se o usuário é o tunico', async () => (
     api.fetchURL().then((user) => {
