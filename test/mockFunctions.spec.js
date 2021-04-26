@@ -17,7 +17,6 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe('verifica as funções e os mocks', () => {
-
   mockFunctions.add.mockImplementation((a, b) => a + b);
   mockFunctions.subtract.mockImplementation((a, b) => a - b);
   mockFunctions.divide.mockImplementation((a, b) => a / b);
