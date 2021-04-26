@@ -25,13 +25,13 @@ describe('quem sobreviveu?', () => {
     adventure.randomAttack();
   });
   afterEach(() => {
-    console.log(adventure.specialists);
+    console.table(adventure.specialists);
   });
   afterAll(() => {
     const name = adventure.specialists[0].nome;
     // const specialistClass = adventure.specialists[0].classe;
     // console.log(`The ${name} which class is ${specialistClass} has been survived!`);
-    console.log(`The ${name} has been survived!`);
+    console.log(`${name} has been survived!`);
   });
 
   // console.table(adventure.specialists);
