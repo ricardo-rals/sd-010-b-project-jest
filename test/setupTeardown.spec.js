@@ -1,3 +1,4 @@
+// jest.mock('../src/setupTeardown');
 const adventure = require('../src/setupTeardown');
 /*
 Num universo não tão distante, um grupo de aventureiros da Trybe enfrentam uma série de testes.
@@ -18,10 +19,16 @@ PS: Os codinomes dos aventureiros são reais! Tentem descobrir quem é quem!
 
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
-
 describe('quem sobreviveu?', () => {
-  // Adicione seu código aqui
-
+  function print() {
+    console.log(adventure.specialists);
+  }
+  function printChampions() {
+    console.log(`${adventure.specialists[0].nome} foi último que ficou.`);
+  }
+  beforeEach(adventure.randomAttack);
+  afterEach(print);
+  afterAll(printChampions);
   test('depois da primeira aventura', () => {
     expect(adventure.specialists.length).toBe(5);
   });
