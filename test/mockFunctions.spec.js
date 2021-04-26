@@ -23,7 +23,7 @@ describe('verifica as funções e os mocks', () => {
   mockFunctions.power = jest.fn().mockImplementation((a, b) => a ** b);
 
   mockFunctions.factorial = jest.fn()
-  .mockImplementation(a => (a ? a * mockFunctions.factorial(a - 1) : 1));
+    .mockImplementation((a) => (a ? a * mockFunctions.factorial(a - 1) : 1));
 
   test('testa função add', () => {
     expect(mockFunctions.add(1, 2)).toEqual(3);
