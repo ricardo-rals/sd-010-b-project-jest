@@ -20,6 +20,7 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe('quem sobreviveu?', () => {
+  // Olhei o PR da colega Alessandra para aplicar melhor a logica do beforeEach
   beforeEach(() => adventure.randomAttack());
   afterEach(() => console.log(adventure.specialists));
   afterAll(() => console.log(`O aventureiro ${adventure.specialists[0].nome}, 
