@@ -21,6 +21,14 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 
 describe('quem sobreviveu?', () => {
   // Adicione seu código aqui
+  afterAll(() => {
+    const survivor = adventure.specialists[0].nome;
+    const level = adventure.specialists[0].classe;
+    const message = `${survivor}, o ${level}, foi o único sobrevivente da batalha!`;
+    console.log(message);
+  });
+  afterEach(() => console.log(adventure.specialists));
+  beforeEach(() => adventure.randomAttack());
 
   test('depois da primeira aventura', () => {
     expect(adventure.specialists.length).toBe(5);
