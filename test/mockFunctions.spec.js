@@ -13,11 +13,30 @@ O foco aqui é a utilização de mock functions.
 
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
+// https://www.freecodecamp.org/news/how-to-factorialize-a-aber-in-javascript-9263c89a4b38/
+// https://github.com/tryber/sd-010-b-project-jest/pull/101/commits/13e3a539606ed934bbcd785c4d766649367b6fbf
+// utilizei o repositorio de alan tanaka para entender o jest!
+mockFunctions.add = jest.fn().mockImplementation((a, b) => (a + b));
+mockFunctions.multiply = jest.fn().mockImplementation((a, b) => (a * b));
+mockFunctions.subtract = jest.fn().mockImplementation((a, b) => a - b);
+mockFunctions.divide = jest.fn().mockImplementation((a, b) => a / b);
+mockFunctions.power = jest.fn().mockImplementation((a, b) => a ** b);
+// https://www.freecodecamp.org/news/how-to-factorialize-a-number-in-javascript-9263c89a4b38/
+mockFunctions.factorial = jest.fn().mockImplementation((a) => {
+  if (a === 0 || a === 1) { return 1; }
+  for (let i = a - 1; i >= 1; i -= 1) {
+    a *= i;
+  }
+  return a;
+});
+
+// aguardando a factorial que não funciona de jeito nenhum!!
 
 describe('verifica as funções e os mocks', () => {
   // Crie suas mock functions aqui
 
   test('testa função add', () => {
+    expect.assertions(5);
     expect(mockFunctions.add(1, 2)).toEqual(3);
     expect(mockFunctions.add(8, 37)).toEqual(45);
     expect(mockFunctions.add(-11, 25)).toEqual(14);
