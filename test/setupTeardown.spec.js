@@ -30,7 +30,7 @@ describe('quem sobreviveu?', () => {
     beforeAll(() => {
       adventure.randomAttack();
       expect(adventure.specialists.length).toBe(4);
-    }); 
+    });
   });
   test('depois da terceira aventura', () => {
     beforeAll(() => {
