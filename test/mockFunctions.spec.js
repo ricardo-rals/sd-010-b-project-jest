@@ -16,18 +16,17 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 // questao 3
 describe('verifica as funções e os mocks', () => {
   // Crie suas mock functions aqui
-  const { add, subtract, multiply, divide, power, factorial } = mockFunctions;
-  add.mockImplementation((a, b) => a + b);
-  subtract.mockImplementation((a, b) => a - b);
-  multiply.mockImplementation((a, b) => a * b);
-  divide.mockImplementation((a, b) => a / b);
-  power.mockImplementation((a, b) => a ** b);
-  factorial.mockImplementation((a) => {
-    let acc = 1;
-    for (let i = 1; i <= a; i += 1) {
-      acc *= 1;
+  mockFunctions.add = jest.fn().mockImplementation((a, b) => a + b);
+  mockFunctions.subtract = jest.fn().mockImplementation((a, b) => a - b);
+  mockFunctions.multiply = jest.fn().mockImplementation((a, b) => a * b);
+  mockFunctions.divide = jest.fn().mockImplementation((a, b) => a / b);
+  mockFunctions.power = jest.fn().mockImplementation((a, b) => a ** b);
+  mockFunctions.factorial = jest.fn().mockImplementation((a) => {
+    let result = 1;
+    for (let index = a; index > 1; index -= 1) {
+      result *= index;
     }
-    return acc;
+    return result;
   });
 
   test('testa função add', () => {
