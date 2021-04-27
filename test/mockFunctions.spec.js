@@ -14,8 +14,17 @@ O foco aqui é a utilização de mock functions.
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
+function f(x) {
+  return (x !== 1) ? x * f(x - 1) : 1;
+}
+
 describe('verifica as funções e os mocks', () => {
-  // Crie suas mock functions aqui
+  mockFunctions.add = jest.fn((x, y) => x + y);
+  mockFunctions.subtract = jest.fn((x, y) => x - y);
+  mockFunctions.multiply = jest.fn((x, y) => x * y);
+  mockFunctions.divide = jest.fn((x, y) => x / y);
+  mockFunctions.power = jest.fn((x, y) => x ** y); // ESlint doesn't like Math.pow :p
+  mockFunctions.factorial = jest.fn((x) => f(x));
 
   test('testa função add', () => {
     expect(mockFunctions.add(1, 2)).toEqual(3);
