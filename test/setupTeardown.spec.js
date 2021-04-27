@@ -27,11 +27,11 @@ describe('quem sobreviveu?', () => {
   afterEach(() => {
     adventure.specialists.forEach((specialista) => {
       console.log(`O aventureiro ${specialista.nome} ainda é um sobrevivente`);
-    })
-  })
+    });
+  });
   afterAll(() => {
-    console.log(`O ${adventure.specialists[0].nome} conseguiu sobreviver a essa dificil aventura, parabens!!!`)
-  })
+    console.log(`O ${adventure.specialists[0].nome} sobreviveu a essa aventura, parabens!`);
+  });
 
   test('depois da primeira aventura', () => {
     expect(adventure.specialists.length).toBe(5);
@@ -49,3 +49,4 @@ describe('quem sobreviveu?', () => {
     expect(adventure.specialists.length).toBe(1);
   });
 });
+// o projeto inteiro teve ajuda da Aluna Fernanda Porto
