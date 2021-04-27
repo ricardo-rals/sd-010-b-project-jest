@@ -9,17 +9,19 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 // const assert = require('assert');
 const answerPhone = require('../src/asyncJest');
-
+// Insira seu teste assíncrono aqui
 // questao 01
 describe('o retorno do telefonema', () => {
-  test('atende', async () => answerPhone(true).then((resp) => {
-    expect.asserttions(1);
-    expect(resp).toEqual('oi!');
+  test('atende', async () => {
+    expect.assertions(1);
+    const resp = await answerPhone(true);
+    expect(resp).toStrictEqual('Oi!');
     // Insira seu teste assíncrono aqui
-  }));
-  test('ocupado', async () => answerPhone(false).catch((error) => {
-    expect.asserttions(1);
-    expect(error).toEqual(new Error('infelizmente não podemos atender...'));
-  }));
-  // Insira seu teste assíncrono aqui
+  });
+  test('ocupado', async () => {
+    expect.assertions(1);
+    return answerPhone().catch((error) => {
+      expect(error.message).toStrictEqual('Infelizmente não podemos atender...');
+    });
+  });
 });
