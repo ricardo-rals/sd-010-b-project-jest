@@ -16,10 +16,15 @@ describe('o retorno do telefonema', () => {
   test('atende', async () => {
   // fonte utilizada: https://jestjs.io/pt-BR/docs/expect#expectassertionsn%C3%BAmero
     expect.assertions(1);
+    const respond = await answerPhone(true);
+    expect(respond).toBe('Oi!');
   });
-  test('ocupado', () => {
-
-    // Insira seu teste assíncrono aqui
+  test('ocupado', async () => {
+    // o seguinte trecho da documentação me ajudou, por indicação de um amigo: https://jestjs.io/pt-BR/docs/asynchronous#promises
+    expect.assertions(1);
+    return answerPhone().catch((error) => {
+      expect(error.message).toStrictEqual('Infelizmente não podemos atender...');
+    });
   });
 });
 // first commit
