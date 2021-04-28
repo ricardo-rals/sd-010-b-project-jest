@@ -13,7 +13,7 @@ describe('o retorno do telefonema', () => {
   test('atende', async () => {
     // Insira seu teste assíncrono aqui
     const result = await answerPhone(true);
-    expect(result).toBe('Alô!');
+    expect(result).toBe('Oi!');
   });
   test('ocupado', async () => {
     // Insira seu teste assíncrono aqui
