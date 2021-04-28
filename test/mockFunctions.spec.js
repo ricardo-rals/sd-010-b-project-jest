@@ -14,10 +14,78 @@ O foco aqui é a utilização de mock functions.
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
-describe('verifica as funções e os mocks', () => {
-  // Crie suas mock functions aqui
+// Crie suas mock functions aqui
+// jest.mock('../src/mockFunctions'); // mocka o modulo inteiro de mockFunctions
+// jest.genMockFromModule('../src/mockFunctions');
 
-  test('testa função add', () => {
+/*
+  não funciona declaração closure
+  Material consultado: https://ttfb.test.traveloka.com/mocking-system-and-test-lifecycle-in-jest/
+ */
+// const mockModule = () => ({ add: jest.fn(() => 42) });
+// jest.mock('../src/mockFunctions', () => mockModule);
+
+/*
+  Mocka inline o módulo mockFunctions implementando cada function dela
+  Material consultado:
+  https://ttfb.test.traveloka.com/mocking-system-and-test-lifecycle-in-jest/
+  https://archive.jestjs.io/docs/en/24.x/jest-object#jestmockmodulename-factory-options
+ */
+// jest.mock('../src/mockFunctions', () => ({
+//   add: jest.fn((number1, number2) => number1 + number2),
+//   subtract: jest.fn((number1, number2) => number1 - number2),
+//   multiply: jest.fn((number1, number2) => number1 * number2),
+//   divide: jest.fn((number1, number2) => number1 / number2),
+//   power: jest.fn(() => 41),
+//   factorial: jest.fn(() => 42),
+// }));
+
+/*
+  Mocka cada function do módulo mockFunctions usando spyOn
+  Material consultado:
+  https://blog.echobind.com/how-to-mock-using-jest-spyon-d13d57a8434d
+  https://codewithhugo.com/jest-fn-spyon-stub-mock/
+  https://dev.to/qmenoret/mocks-and-spies-with-jest-32gf
+  https://archive.jestjs.io/docs/en/24.x/jest-object#jestspyonobject-methodname
+ */
+// jest.spyOn(mockFunctions, 'add').mockImplementation((number1, number2) => number1 + number2);
+
+describe('verifica as funções e os mocks', () => {
+  // foo is a mock function
+  /*
+    verifica se está mockado
+    Material consultado sobre jest.isMockFunction
+    https://archive.jestjs.io/docs/en/24.x/jest-object#jestismockfunctionfn
+  */
+  // console.log(`Add está mockado?: ${jest.isMockFunction(mockFunctions.add)}`);
+  /*
+    Restaura a implementação original das functions em mockFunctions quando mockado com spyOn
+    Material consultado sobre jest.restoreAllMocks()
+    https://archive.jestjs.io/docs/en/24.x/jest-object#jestrestoreallmocks
+    // mockFunctions.add.mockRestore();
+
+    Material consultado sobre mockFn.mockRestore()
+    https://archive.jestjs.io/docs/en/24.x/mock-function-api#mockfnmockrestore
+    // jest.restoreAllMocks();
+   */
+
+  /*
+  // Mocka uma function de mockFunctions
+  // Não funciona com jest.genMockFromModule; é necessário que jest.mock('../src/mockFunctions') esteja fora do describe
+  mockFunctions.add.mockImplementation((number1, number2) => number1 + number2); */
+
+  test.only('testa função add', () => {
+    /*
+      Formas equivalentes usando:
+      - jest.fn
+      mockFunctions.add = jest.fn((number1, number2) => number1 + number2);
+
+      - mockImplementation; é necessário que jest.mock('../src/mockFunctions') esteja fora do describe
+      mockFunctions.add.mockImplementation((number1, number2) => number1 + number2);
+    */
+    jest.spyOn(mockFunctions, 'add').mockImplementation((number1, number2) => number1 + number2);
+    // console.log(`Add está mockado?: ${jest.isMockFunction(mockFunctions.add)}`);
+
     expect(mockFunctions.add(1, 2)).toEqual(3);
     expect(mockFunctions.add(8, 37)).toEqual(45);
     expect(mockFunctions.add(-11, 25)).toEqual(14);
