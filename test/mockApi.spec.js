@@ -30,7 +30,7 @@ const objInfo = {
 };
 
 describe('verifica o usuário', () => {
-  api.fetchURL = jest.fn().mockReturnValue(objInfo);
+  api.fetchURL = jest.fn().mockReturnValue(Promise.resolve(objInfo));
 
   test('verifica se o usuário é o tunico', async () => (
     api.fetchURL().then((user) => {
