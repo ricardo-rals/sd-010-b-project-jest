@@ -19,12 +19,12 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 // https://jestjs.io/pt-BR/docs/mock-function-api#mockfnmockimplementationfn
 
 describe('verifica as funções e os mocks', () => {
-  mockFunctions.add.mockImplementation((a, b) => a + b);
-  mockFunctions.subtract.mockImplementation((a, b) => a - b);
-  mockFunctions.multiply.mockImplementation((a, b) => a * b);
-  mockFunctions.divide.mockImplementation((a, b) => a / b);
-  mockFunctions.power.mockImplementation((a, b) => a ** b);
-  mockFunctions.factorial.mockImplementation((a) => {
+  mockFunctions.add = jest.fn().mockImplementation((a, b) => a + b);
+  mockFunctions.subtract = jest.fn().mockImplementation((a, b) => a - b);
+  mockFunctions.multiply = jest.fn().mockImplementation((a, b) => a * b);
+  mockFunctions.divide = jest.fn().mockImplementation((a, b) => a / b);
+  mockFunctions.power = jest.fn().mockImplementation((a, b) => a ** b);
+  mockFunctions.factorial = jest.fn().mockImplementation((a) => {
     let counter = 1;
     for (let i = a; i > 0; i -= 1) {
       counter *= i;
