@@ -15,7 +15,6 @@ O foco aqui é a utilização de mock functions.
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
-
 jest.mock('../src/mockFunctions', () => ({
   add: jest.fn((a, b) => a + b),
   subtract: jest.fn((a, b) => a - b),
