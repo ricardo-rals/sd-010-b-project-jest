@@ -72,3 +72,5 @@ describe('verifica as funções e os mocks', () => {
     expect(mockFunctions.factorial(2)).toEqual(2);
   });
 });
+
+// referencia da função factorial https://stackoverflow.com/questions/37605848/sum-of-factorial-numbers-in-javascript
