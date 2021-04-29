@@ -1,3 +1,4 @@
+// usei esses links como referencia https://jestjs.io/docs/25.x/asynchronous e https://www.pluralsight.com/guides/test-asynchronous-code-jest
 const answerPhone = require('../src/asyncJest');
 /*
 A função answerPhone recebe um parâmetro boleano.
@@ -11,11 +12,9 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 
 describe('o retorno do telefonema', () => {
   test('atende', async () => {
-    const valor = await answerPhone(true).resolves;
-    expect(valor).toBe(true);
+    await expect(answerPhone(true)).resolves.toBe('Oi!');
   });
   test('ocupado', async () => {
-    const valor = await answerPhone(false).resolves;
-    expect(valor).toBe(false);
+    await expect(answerPhone(false)).rejects.toThrow('Infelizmente não podemos atender...');
   });
 });
