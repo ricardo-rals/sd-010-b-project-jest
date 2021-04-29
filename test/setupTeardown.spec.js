@@ -20,7 +20,34 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe('quem sobreviveu?', () => {
-  // Adicione seu código aqui
+  /*
+    Esta função recebe uma lista de objetos specialist e retorna lista contendo os apenas nomes dos especialistas
+
+    Material consultado sobre a function join
+    https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/join
+   */
+  const specialistNamesList = (specialists) =>
+    specialists.map(
+      (specialist) => `${specialist.nome}`,
+    ).join(', ');
+
+  /*
+    Material consultado sobre setup-teardown
+    https://archive.jestjs.io/docs/en/24.x/setup-teardown
+   */
+  beforeAll(() => console.log(
+    `Grupo de aventureiros inicial: ${
+      specialistNamesList(adventure.specialists)}`,
+  ));
+
+  beforeEach(() => {
+    adventure.randomAttack();
+    console.log(`Grupo de aventureiros restantes: ${
+      specialistNamesList(adventure.specialists)}`);
+  });
+
+  afterAll(() => console.log(`Sobrevivente: ${
+    specialistNamesList(adventure.specialists)}`));
 
   test('depois da primeira aventura', () => {
     expect(adventure.specialists.length).toBe(5);
