@@ -58,7 +58,7 @@ describe('verifica o usuário', () => {
       medium: 'https://randomuser.me/api/portraits/med/women/7.jpg',
       thumbnail: 'https://randomuser.me/api/portraits/thumb/women/7.jpg',
     },
-    nat: 'IE', 
+    nat: 'IE',
   });
 
   test('verifica se o usuário é o tunico', async () => (
