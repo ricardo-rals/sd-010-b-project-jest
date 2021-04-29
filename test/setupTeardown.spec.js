@@ -1,4 +1,5 @@
 const adventure = require('../src/setupTeardown');
+
 /*
 Num universo não tão distante, um grupo de aventureiros da Trybe enfrentam uma série de testes.
 O grupo parte em direção ao sucesso, mas,
@@ -19,8 +20,11 @@ PS: Os codinomes dos aventureiros são reais! Tentem descobrir quem é quem!
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
+// Source: https://app.betrybe.com/course/fundamentals/testes-automatizados-com-jest/jest-testes-assincronos/7cf613f2-d8ba-40b5-8f9d-2619d813a106/conteudos/03ecbb49-cd6e-40ff-8486-8046415c8e0e/setup-e-teardown/cb01ec37-3cab-4f15-b77b-2561f8c22135?use_case=side_bar
 describe('quem sobreviveu?', () => {
   // Adicione seu código aqui
+
+  beforeEach(() => adventure.randomAttack());
 
   test('depois da primeira aventura', () => {
     expect(adventure.specialists.length).toBe(5);
