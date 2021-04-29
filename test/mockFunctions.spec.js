@@ -1,5 +1,6 @@
 const mockFunctions = require('../src/mockFunctions');
 
+jest.mock('../src/mockFunctions');
 /*
 Criamos uma série de funções com eficiência duvidosa.
 Elas estão no arquivo 'src/mockFunctions.js'.
@@ -13,6 +14,8 @@ O foco aqui é a utilização de mock functions.
 
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
+
+
 jest.mock('../src/mockFunctions', () => ({
   add: jest.fn((a, b) => a + b),
   subtract: jest.fn((a, b) => a - b),
@@ -33,6 +36,18 @@ jest.mock('../src/mockFunctions', () => ({
 
 describe('verifica as funções e os mocks', () => {
   // Crie suas mock functions aqui
+
+  mockFunctions.add = jest.fn().mockImplementation((a, b) => a + b);
+  mockFunctions.subtract = jest.fn().mockImplementation((a, b) => a - b);
+  mockFunctions.multiply = jest.fn().mockImplementation((a, b) => a * b);
+  mockFunctions.divide = jest.fn().mockImplementation((a, b) => a / b);
+  mockFunctions.power = jest.fn().mockImplementation((a, b) => a ** b);
+  mockFunctions.factorial = jest.fn().mockImplementation(function fatorial(n) { // funcao fatorial retirada do site https://blog.matheuscastiglioni.com.br/memorizando-funcoes-em-javascript/
+    if (n > 1) {
+      return n * fatorial(n - 1);
+    }
+    return n;
+  });
 
   test('testa função multiply', () => {
     expect(mockFunctions.multiply(1, 2)).toEqual(2);
