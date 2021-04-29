@@ -46,7 +46,13 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 //     }
 //     return pow;
 //   }),
-//   factorial: jest.fn(() => 42),
+//   factorial: jest.fn((number) => {
+//     let fact = 1;
+//     for (let i = 2; i <= number; i += 1) {
+//       fact *= i;
+//     }
+//     return fact;
+//   }),
 // }));
 
 /*
