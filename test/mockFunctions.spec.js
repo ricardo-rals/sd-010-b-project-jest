@@ -1,3 +1,4 @@
+// usei para fazer o fatorial https://www.geeksforgeeks.org/factorial-of-a-number-using-javascript/
 const mockFunctions = require('../src/mockFunctions');
 
 /*
@@ -20,7 +21,11 @@ describe('verifica as funções e os mocks', () => {
   mockFunctions.multiply = jest.fn().mockImplementation((a, b) => a * b);
   mockFunctions.divide = jest.fn().mockImplementation((a, b) => a / b);
   mockFunctions.power = jest.fn().mockImplementation((a, b) => a ** b);
-
+  mockFunctions.factorial = jest.fn().mockImplementation((a) => {
+    let numero = 1;
+    for (let i = 2; i <= a; i += 1) numero *= i;
+    return numero;
+  });
   test('testa função add', () => {
     expect(mockFunctions.add(1, 2)).toEqual(3);
     expect(mockFunctions.add(8, 37)).toEqual(45);
