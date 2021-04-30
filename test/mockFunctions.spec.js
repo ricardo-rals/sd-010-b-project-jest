@@ -20,6 +20,13 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 describe('verifica as funções e os mocks', () => {
   mockFunctions.multiply.mockImplementation((a, b) => a * b);
   mockFunctions.power.mockImplementation((a, b) => a ** b);
+  mockFunctions.factorial.mockImplementation((a) => {
+    let factory = 1;
+    for (let index = 1; index <= a; index += 1) {
+      factory *= index;
+    }
+    return factory;
+  });
 
   test('testa função add', () => {
     expect(mockFunctions.add(1, 2)).toEqual(3);
@@ -66,3 +73,5 @@ describe('verifica as funções e os mocks', () => {
 });
 
 // https://jestjs.io/pt-BR/docs/jest-object
+// https://stackoverflow.com/questions/3959211/what-is-the-fastest-factorial-function-in-javascript
+// Para o teste da função factory abtive ajuda de colegas para ajustar o teste
