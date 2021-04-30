@@ -19,8 +19,12 @@ PS: Os codinomes dos aventureiros são reais! Tentem descobrir quem é quem!
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
+// Fonte de pesquisa: https://jestjs.io/pt-BR/docs/api#beforeeachfn-timeout
+// beforeEach(fn, timeout)#
+// Executa uma função antes que cada um dos testes neste arquivo seja executado. If the function returns a promise or is a generator, Jest waits for that promise to resolve before running the test.
+
 describe('quem sobreviveu?', () => {
-  // Adicione seu código aqui
+  beforeEach(() => adventure.randomAttack());
 
   test('depois da primeira aventura', () => {
     expect(adventure.specialists.length).toBe(5);
