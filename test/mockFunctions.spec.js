@@ -77,4 +77,4 @@ describe('verifica as funções e os mocks', () => {
 
 // https://jestjs.io/pt-BR/docs/jest-object
 // https://stackoverflow.com/questions/3959211/what-is-the-fastest-factorial-function-in-javascript
-// Para o teste da função factory abtive ajuda de colegas para ajustar o teste
+// Para o teste da função factory obtive ajuda de colegas para ajustar o teste
