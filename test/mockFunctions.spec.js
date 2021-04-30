@@ -19,6 +19,7 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 
 describe('verifica as funções e os mocks', () => {
   mockFunctions.multiply.mockImplementation((a, b) => a * b);
+  mockFunctions.power.mockImplementation((a, b) => a ** b);
 
   test('testa função add', () => {
     expect(mockFunctions.add(1, 2)).toEqual(3);
