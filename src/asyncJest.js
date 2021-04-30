@@ -5,5 +5,4 @@ const answerPhone = (answer) =>
       answer ? resolve('Oi!') : reject(new Error('Infelizmente não podemos atender...')), 3000,
     );
   });
-
 module.exports = answerPhone;
