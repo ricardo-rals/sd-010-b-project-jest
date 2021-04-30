@@ -27,6 +27,8 @@ describe('verifica as funções e os mocks', () => {
     }
     return factory;
   });
+  mockFunctions.add.mockImplementation((a, b) => a + b);
+
 
   test('testa função add', () => {
     expect(mockFunctions.add(1, 2)).toEqual(3);
