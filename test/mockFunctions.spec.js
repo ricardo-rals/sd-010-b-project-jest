@@ -24,6 +24,7 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 // Função factorialFunc que calcula o fatorial mockeado
+// Calcula de forma recursiva... Nice :)
 const fatorialFunc = (a) => {
   if (a === 0 || a === 1) {
     return 1;
