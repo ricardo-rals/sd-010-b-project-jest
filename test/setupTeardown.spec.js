@@ -21,7 +21,15 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 
 describe('quem sobreviveu?', () => {
   // Adicione seu código aqui
-
+  function showUp() {
+    console.log(adventure.specialists);
+  }
+  function ranking() {
+    console.log(`${adventure.specialists[0].nome} was the last remained.`);
+  }
+  beforeEach(adventure.randomAttack);
+  afterEach(showUp);
+  afterAll(ranking);
   test('depois da primeira aventura', () => {
     expect(adventure.specialists.length).toBe(5);
   });
