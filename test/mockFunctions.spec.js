@@ -1,3 +1,4 @@
+
 const mockFunctions = require('../src/mockFunctions');
 jest.mock('../src/mockFunctions');
 
@@ -16,7 +17,7 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe('verifica as funções e os mocks', () => {
-  //para esse exercicio estou usar A e B como parametros padroes como foi mostrado na aula
+  // para esse exercicio estou usar A e B como parametros padroes como foi mostrado na aula
   mockFunctions.add.mockImplementation((a, b) => a + b);
 
   mockFunctions.subtract.mockImplementation((a, b) => a - b);
