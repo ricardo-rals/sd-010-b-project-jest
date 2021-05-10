@@ -15,6 +15,4 @@ const fetchURL = () => new Promise(function (resolve, reject) {
   });
 });
 
-console.log('bondia');
-
 module.exports = { fetchURL };
