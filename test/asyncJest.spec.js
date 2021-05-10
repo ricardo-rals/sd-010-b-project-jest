@@ -12,11 +12,14 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 
 describe('o retorno do telefonema', () => {
   test('atende', () => {
+<<<<<<< HEAD
     assert.fail();
     // Insira seu teste assíncrono aqui - começando projeto
+=======
+    // Insira seu teste assíncrono aqui
+>>>>>>> a9339142ead2ea073cdea759dd922902873b041a
   });
   test('ocupado', () => {
-    assert.fail();
     // Insira seu teste assíncrono aqui
   });
 });
