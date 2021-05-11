@@ -1,3 +1,4 @@
+const { AssertionError } = require('assert');
 const assert = require('assert');
 const answerPhone = require('../src/asyncJest');
 /*
@@ -11,15 +12,15 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe('o retorno do telefonema', () => {
-  test('atende', () => {
-<<<<<<< HEAD
-    assert.fail();
-    // Insira seu teste assíncrono aqui - começando projeto
-=======
-    // Insira seu teste assíncrono aqui
->>>>>>> a9339142ead2ea073cdea759dd922902873b041a
+  test('atende', async () => {
+    expect.assertions(1);
+    const answer = await answerPhone('Hello');
+    expect(answer).toBe('Oi!');
   });
   test('ocupado', () => {
-    // Insira seu teste assíncrono aqui
+    expect.assertions(1);
+    return answerPhone().catch((error) =>
+      expect(error.message).toStrictEqual('Infelizmente não podemos atender...'));
+  // Feito com ajuda de Henrique Zózimo
   });
 });
