@@ -43,7 +43,7 @@ describe('verifica o usuário', () => {
   // Crie sua mock da função fetchURL() aqui
 
   test('verifica se o usuário é o tunico', async () => (
-    return api.fetchURL().then((user) => {
+    api.fetchURL().then((user) => {
       expect(user.gender).toEqual('male');
       expect(user.name.first).toEqual('Antônio');
       expect(user.name.last).toEqual('Britto');
