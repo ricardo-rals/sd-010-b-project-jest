@@ -1,4 +1,4 @@
-const answerPhone = require('../src/asyncJest');]
+const answerPhone = require('../src/asyncJest');
 // const assert = require('assert');
 
 describe('o retorno do telefonema', () => {
