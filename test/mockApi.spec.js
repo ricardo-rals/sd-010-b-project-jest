@@ -37,7 +37,7 @@ describe('verifica o usuário', () => {
       username: 'tunicao123',
       password: '1234567890',
     },
-};
+  };
 
   api.fetchURL = jest.fn().mockResolvedValue(users);
   // Crie sua mock da função fetchURL() aqui
