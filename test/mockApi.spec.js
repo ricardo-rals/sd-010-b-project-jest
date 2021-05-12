@@ -24,7 +24,7 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 
 describe('verifica o usuário', () => {
   const tunico = {
-    Gender: 'Male',
+    gender: 'male',
     name: { first: 'Antônio', last: 'Britto' },
     location: { country: 'Brazil' },
     email: 'tunico@bol.com.br',
